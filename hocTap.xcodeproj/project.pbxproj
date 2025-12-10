@@ -1,0 +1,693 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE1590FA2EE73E9300E8EF1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1590F92EE73E9300E8EF1B /* AppDelegate.swift */; };
+		CE1590FC2EE73E9300E8EF1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1590FB2EE73E9300E8EF1B /* SceneDelegate.swift */; };
+		CE1590FE2EE73E9300E8EF1B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1590FD2EE73E9300E8EF1B /* HomeController.swift */; };
+		CE1591012EE73E9300E8EF1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1590FF2EE73E9300E8EF1B /* Main.storyboard */; };
+		CE1591032EE73E9A00E8EF1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1591022EE73E9A00E8EF1B /* Assets.xcassets */; };
+		CE1591062EE73E9A00E8EF1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1591042EE73E9A00E8EF1B /* LaunchScreen.storyboard */; };
+		CE1591112EE73E9A00E8EF1B /* hocTapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1591102EE73E9A00E8EF1B /* hocTapTests.swift */; };
+		CE15911B2EE73E9B00E8EF1B /* hocTapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15911A2EE73E9B00E8EF1B /* hocTapUITests.swift */; };
+		CE15911D2EE73E9B00E8EF1B /* hocTapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15911C2EE73E9B00E8EF1B /* hocTapUITestsLaunchTests.swift */; };
+		CE1591412EE886BD00E8EF1B /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1591372EE886BC00E8EF1B /* FMDatabaseAdditions.m */; };
+		CE1591422EE886BD00E8EF1B /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1591382EE886BC00E8EF1B /* FMDatabasePool.m */; };
+		CE1591432EE886BD00E8EF1B /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15913A2EE886BC00E8EF1B /* FMDatabase.m */; };
+		CE1591442EE886BD00E8EF1B /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15913B2EE886BC00E8EF1B /* FMDatabaseQueue.m */; };
+		CE1591452EE886BD00E8EF1B /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15913F2EE886BD00E8EF1B /* FMResultSet.m */; };
+		CE1591472EE886F800E8EF1B /* MyDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1591462EE886F800E8EF1B /* MyDatabase.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE15910D2EE73E9A00E8EF1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE1590EE2EE73E9300E8EF1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE1590F52EE73E9300E8EF1B;
+			remoteInfo = hocTap;
+		};
+		CE1591172EE73E9B00E8EF1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE1590EE2EE73E9300E8EF1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE1590F52EE73E9300E8EF1B;
+			remoteInfo = hocTap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CE1590F62EE73E9300E8EF1B /* hocTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hocTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1590F92EE73E9300E8EF1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE1590FB2EE73E9300E8EF1B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CE1590FD2EE73E9300E8EF1B /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		CE1591002EE73E9300E8EF1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE1591022EE73E9A00E8EF1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE1591052EE73E9A00E8EF1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE1591072EE73E9A00E8EF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE15910C2EE73E9A00E8EF1B /* hocTapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hocTapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1591102EE73E9A00E8EF1B /* hocTapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hocTapTests.swift; sourceTree = "<group>"; };
+		CE1591162EE73E9B00E8EF1B /* hocTapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hocTapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE15911A2EE73E9B00E8EF1B /* hocTapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hocTapUITests.swift; sourceTree = "<group>"; };
+		CE15911C2EE73E9B00E8EF1B /* hocTapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hocTapUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE1591362EE886BC00E8EF1B /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = ../../../FoodManagement2026/FoodManagement2026/FMDB/src/FMDatabase.h; sourceTree = "<group>"; };
+		CE1591372EE886BC00E8EF1B /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = ../../../FoodManagement2026/FoodManagement2026/FMDB/src/FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		CE1591382EE886BC00E8EF1B /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = ../../../FoodManagement2026/FoodManagement2026/FMDB/src/FMDatabasePool.m; sourceTree = "<group>"; };
+		CE1591392EE886BC00E8EF1B /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = ../../../FoodManagement2026/FoodManagement2026/FMDB/src/FMDatabasePool.h; sourceTree = "<group>"; };
+		CE15913A2EE886BC00E8EF1B /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = ../../../FoodManagement2026/FoodManagement2026/FMDB/src/FMDatabase.m; sourceTree = "<group>"; };
+		CE15913B2EE886BC00E8EF1B /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = ../../../FoodManagement2026/FoodManagement2026/FMDB/src/FMDatabaseQueue.m; sourceTree = "<group>"; };
+		CE15913C2EE886BC00E8EF1B /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = ../../../FoodManagement2026/FoodManagement2026/FMDB/src/FMDatabaseQueue.h; sourceTree = "<group>"; };
+		CE15913D2EE886BC00E8EF1B /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = ../../../FoodManagement2026/FoodManagement2026/FMDB/src/FMDB.h; sourceTree = "<group>"; };
+		CE15913E2EE886BD00E8EF1B /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = ../../../FoodManagement2026/FoodManagement2026/FMDB/src/FMResultSet.h; sourceTree = "<group>"; };
+		CE15913F2EE886BD00E8EF1B /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = ../../../FoodManagement2026/FoodManagement2026/FMDB/src/FMResultSet.m; sourceTree = "<group>"; };
+		CE1591402EE886BD00E8EF1B /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = ../../../FoodManagement2026/FoodManagement2026/FMDB/src/FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		CE1591462EE886F800E8EF1B /* MyDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatabase.swift; sourceTree = "<group>"; };
+		CE1591482EE8872C00E8EF1B /* FoodManagement2026-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoodManagement2026-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE1590F32EE73E9300E8EF1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE1591092EE73E9A00E8EF1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE1591132EE73E9B00E8EF1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE1590ED2EE73E9300E8EF1B = {
+			isa = PBXGroup;
+			children = (
+				CE1590F82EE73E9300E8EF1B /* hocTap */,
+				CE15910F2EE73E9A00E8EF1B /* hocTapTests */,
+				CE1591192EE73E9B00E8EF1B /* hocTapUITests */,
+				CE1590F72EE73E9300E8EF1B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE1590F72EE73E9300E8EF1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE1590F62EE73E9300E8EF1B /* hocTap.app */,
+				CE15910C2EE73E9A00E8EF1B /* hocTapTests.xctest */,
+				CE1591162EE73E9B00E8EF1B /* hocTapUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE1590F82EE73E9300E8EF1B /* hocTap */ = {
+			isa = PBXGroup;
+			children = (
+				CE1591312EE7419000E8EF1B /* FMDB */,
+				CE15912A2EE73EE100E8EF1B /* Controllers */,
+				CE1590FF2EE73E9300E8EF1B /* Main.storyboard */,
+				CE15912C2EE73FB300E8EF1B /* Controls */,
+				CE15912B2EE73F9C00E8EF1B /* Models */,
+				CE1591292EE73EAA00E8EF1B /* System files */,
+			);
+			path = hocTap;
+			sourceTree = "<group>";
+		};
+		CE15910F2EE73E9A00E8EF1B /* hocTapTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE1591102EE73E9A00E8EF1B /* hocTapTests.swift */,
+			);
+			path = hocTapTests;
+			sourceTree = "<group>";
+		};
+		CE1591192EE73E9B00E8EF1B /* hocTapUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CE15911A2EE73E9B00E8EF1B /* hocTapUITests.swift */,
+				CE15911C2EE73E9B00E8EF1B /* hocTapUITestsLaunchTests.swift */,
+			);
+			path = hocTapUITests;
+			sourceTree = "<group>";
+		};
+		CE1591292EE73EAA00E8EF1B /* System files */ = {
+			isa = PBXGroup;
+			children = (
+				CE1590F92EE73E9300E8EF1B /* AppDelegate.swift */,
+				CE1590FB2EE73E9300E8EF1B /* SceneDelegate.swift */,
+				CE1591022EE73E9A00E8EF1B /* Assets.xcassets */,
+				CE1591042EE73E9A00E8EF1B /* LaunchScreen.storyboard */,
+				CE1591072EE73E9A00E8EF1B /* Info.plist */,
+			);
+			name = "System files";
+			sourceTree = "<group>";
+		};
+		CE15912A2EE73EE100E8EF1B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE1590FD2EE73E9300E8EF1B /* HomeController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE15912B2EE73F9C00E8EF1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CE15912C2EE73FB300E8EF1B /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		CE1591312EE7419000E8EF1B /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				CE1591362EE886BC00E8EF1B /* FMDatabase.h */,
+				CE15913A2EE886BC00E8EF1B /* FMDatabase.m */,
+				CE1591402EE886BD00E8EF1B /* FMDatabaseAdditions.h */,
+				CE1591372EE886BC00E8EF1B /* FMDatabaseAdditions.m */,
+				CE1591392EE886BC00E8EF1B /* FMDatabasePool.h */,
+				CE1591382EE886BC00E8EF1B /* FMDatabasePool.m */,
+				CE15913C2EE886BC00E8EF1B /* FMDatabaseQueue.h */,
+				CE15913B2EE886BC00E8EF1B /* FMDatabaseQueue.m */,
+				CE15913D2EE886BC00E8EF1B /* FMDB.h */,
+				CE15913E2EE886BD00E8EF1B /* FMResultSet.h */,
+				CE15913F2EE886BD00E8EF1B /* FMResultSet.m */,
+				CE1591322EE741BF00E8EF1B /* DAL */,
+				CE1591482EE8872C00E8EF1B /* FoodManagement2026-Bridging-Header.h */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		CE1591322EE741BF00E8EF1B /* DAL */ = {
+			isa = PBXGroup;
+			children = (
+				CE1591462EE886F800E8EF1B /* MyDatabase.swift */,
+			);
+			path = DAL;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE1590F52EE73E9300E8EF1B /* hocTap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE1591202EE73E9B00E8EF1B /* Build configuration list for PBXNativeTarget "hocTap" */;
+			buildPhases = (
+				CE1590F22EE73E9300E8EF1B /* Sources */,
+				CE1590F32EE73E9300E8EF1B /* Frameworks */,
+				CE1590F42EE73E9300E8EF1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = hocTap;
+			productName = hocTap;
+			productReference = CE1590F62EE73E9300E8EF1B /* hocTap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE15910B2EE73E9A00E8EF1B /* hocTapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE1591232EE73E9B00E8EF1B /* Build configuration list for PBXNativeTarget "hocTapTests" */;
+			buildPhases = (
+				CE1591082EE73E9A00E8EF1B /* Sources */,
+				CE1591092EE73E9A00E8EF1B /* Frameworks */,
+				CE15910A2EE73E9A00E8EF1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE15910E2EE73E9A00E8EF1B /* PBXTargetDependency */,
+			);
+			name = hocTapTests;
+			productName = hocTapTests;
+			productReference = CE15910C2EE73E9A00E8EF1B /* hocTapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CE1591152EE73E9B00E8EF1B /* hocTapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE1591262EE73E9B00E8EF1B /* Build configuration list for PBXNativeTarget "hocTapUITests" */;
+			buildPhases = (
+				CE1591122EE73E9B00E8EF1B /* Sources */,
+				CE1591132EE73E9B00E8EF1B /* Frameworks */,
+				CE1591142EE73E9B00E8EF1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE1591182EE73E9B00E8EF1B /* PBXTargetDependency */,
+			);
+			name = hocTapUITests;
+			productName = hocTapUITests;
+			productReference = CE1591162EE73E9B00E8EF1B /* hocTapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE1590EE2EE73E9300E8EF1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					CE1590F52EE73E9300E8EF1B = {
+						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
+					};
+					CE15910B2EE73E9A00E8EF1B = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = CE1590F52EE73E9300E8EF1B;
+					};
+					CE1591152EE73E9B00E8EF1B = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = CE1590F52EE73E9300E8EF1B;
+					};
+				};
+			};
+			buildConfigurationList = CE1590F12EE73E9300E8EF1B /* Build configuration list for PBXProject "hocTap" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE1590ED2EE73E9300E8EF1B;
+			productRefGroup = CE1590F72EE73E9300E8EF1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE1590F52EE73E9300E8EF1B /* hocTap */,
+				CE15910B2EE73E9A00E8EF1B /* hocTapTests */,
+				CE1591152EE73E9B00E8EF1B /* hocTapUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE1590F42EE73E9300E8EF1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE1591062EE73E9A00E8EF1B /* LaunchScreen.storyboard in Resources */,
+				CE1591032EE73E9A00E8EF1B /* Assets.xcassets in Resources */,
+				CE1591012EE73E9300E8EF1B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE15910A2EE73E9A00E8EF1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE1591142EE73E9B00E8EF1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE1590F22EE73E9300E8EF1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE1590FE2EE73E9300E8EF1B /* HomeController.swift in Sources */,
+				CE1590FA2EE73E9300E8EF1B /* AppDelegate.swift in Sources */,
+				CE1591422EE886BD00E8EF1B /* FMDatabasePool.m in Sources */,
+				CE1591472EE886F800E8EF1B /* MyDatabase.swift in Sources */,
+				CE1591442EE886BD00E8EF1B /* FMDatabaseQueue.m in Sources */,
+				CE1591432EE886BD00E8EF1B /* FMDatabase.m in Sources */,
+				CE1590FC2EE73E9300E8EF1B /* SceneDelegate.swift in Sources */,
+				CE1591452EE886BD00E8EF1B /* FMResultSet.m in Sources */,
+				CE1591412EE886BD00E8EF1B /* FMDatabaseAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE1591082EE73E9A00E8EF1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE1591112EE73E9A00E8EF1B /* hocTapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE1591122EE73E9B00E8EF1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE15911B2EE73E9B00E8EF1B /* hocTapUITests.swift in Sources */,
+				CE15911D2EE73E9B00E8EF1B /* hocTapUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE15910E2EE73E9A00E8EF1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE1590F52EE73E9300E8EF1B /* hocTap */;
+			targetProxy = CE15910D2EE73E9A00E8EF1B /* PBXContainerItemProxy */;
+		};
+		CE1591182EE73E9B00E8EF1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE1590F52EE73E9300E8EF1B /* hocTap */;
+			targetProxy = CE1591172EE73E9B00E8EF1B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE1590FF2EE73E9300E8EF1B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE1591002EE73E9300E8EF1B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CE1591042EE73E9A00E8EF1B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE1591052EE73E9A00E8EF1B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE15911E2EE73E9B00E8EF1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CE15911F2EE73E9B00E8EF1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE1591212EE73E9B00E8EF1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = hocTap/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.hocTap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "hocTap/FMDB/hocTap-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE1591222EE73E9B00E8EF1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = hocTap/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.hocTap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "hocTap/FMDB/hocTap-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CE1591242EE73E9B00E8EF1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.hocTapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hocTap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/hocTap";
+			};
+			name = Debug;
+		};
+		CE1591252EE73E9B00E8EF1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.hocTapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hocTap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/hocTap";
+			};
+			name = Release;
+		};
+		CE1591272EE73E9B00E8EF1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.hocTapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = hocTap;
+			};
+			name = Debug;
+		};
+		CE1591282EE73E9B00E8EF1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.edu.tdc.hocTapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = hocTap;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE1590F12EE73E9300E8EF1B /* Build configuration list for PBXProject "hocTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE15911E2EE73E9B00E8EF1B /* Debug */,
+				CE15911F2EE73E9B00E8EF1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE1591202EE73E9B00E8EF1B /* Build configuration list for PBXNativeTarget "hocTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE1591212EE73E9B00E8EF1B /* Debug */,
+				CE1591222EE73E9B00E8EF1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE1591232EE73E9B00E8EF1B /* Build configuration list for PBXNativeTarget "hocTapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE1591242EE73E9B00E8EF1B /* Debug */,
+				CE1591252EE73E9B00E8EF1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE1591262EE73E9B00E8EF1B /* Build configuration list for PBXNativeTarget "hocTapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE1591272EE73E9B00E8EF1B /* Debug */,
+				CE1591282EE73E9B00E8EF1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE1590EE2EE73E9300E8EF1B /* Project object */;
+}

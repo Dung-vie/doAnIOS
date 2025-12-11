@@ -67,7 +67,7 @@
 		CE15913F2EE886BD00E8EF1B /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = ../../../FoodManagement2026/FoodManagement2026/FMDB/src/FMResultSet.m; sourceTree = "<group>"; };
 		CE1591402EE886BD00E8EF1B /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = ../../../FoodManagement2026/FoodManagement2026/FMDB/src/FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		CE1591462EE886F800E8EF1B /* MyDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatabase.swift; sourceTree = "<group>"; };
-		CE1591482EE8872C00E8EF1B /* FoodManagement2026-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoodManagement2026-Bridging-Header.h"; sourceTree = "<group>"; };
+		CEB0F11D2EE9E6A600428CCE /* hocTap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hocTap-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,7 +194,7 @@
 				CE15913E2EE886BD00E8EF1B /* FMResultSet.h */,
 				CE15913F2EE886BD00E8EF1B /* FMResultSet.m */,
 				CE1591322EE741BF00E8EF1B /* DAL */,
-				CE1591482EE8872C00E8EF1B /* FoodManagement2026-Bridging-Header.h */,
+				CEB0F11D2EE9E6A600428CCE /* hocTap-Bridging-Header.h */,
 			);
 			path = FMDB;
 			sourceTree = "<group>";

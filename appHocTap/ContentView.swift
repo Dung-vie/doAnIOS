@@ -11,7 +11,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink( destination: Text("ManagerView")) {
+                NavigationLink {
+                    ManagerView()
+                } label: {
                     Image(systemName: "globe")
                     .imageScale(.large)
                     .foregroundColor(.accentColor)

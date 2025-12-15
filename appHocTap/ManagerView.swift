@@ -15,14 +15,17 @@ struct ManagerView: View {
                     
                     // MARK: - Header
                     HStack {
-                        Text("Trang Chủ Quản Trị")
+                        Text("Trang Chủ Quản Trị test")
                             .font(.title2)
                             .fontWeight(.bold)
                         
                         Spacer()
-                        
-                        Image(systemName: "person.circle")
-                            .font(.title2)
+                            NavigationLink {
+                                ContentView()
+                            } label: {
+                                Image(systemName: "house.fill")
+                                    .font(.title2)
+                            }
                     }
                     .padding(.horizontal)
                     
@@ -64,12 +67,12 @@ struct ManagerView: View {
                             } label: {
                                 AdminActionCard(
                                     icon: "person.2.fill",
-                                    title: "Quản lý Người dùng",
+                                    title: "Quản lý người dùng",
                                     subtitle: "Xem và quản lý tài khoản"
                                 )
                             }
-                            .padding(.horizontal)
                         }
+                        .padding(.horizontal)
                     }
                     .padding(.top)
                 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0B6F8C2EEF1A700094B38A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B6F8B2EEF1A700094B38A /* HomeView.swift */; };
 		CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC3642EECA3CE00E975F7 /* appHocTapApp.swift */; };
 		CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC3662EECA3CE00E975F7 /* ContentView.swift */; };
 		CE8AC3692EECA3D400E975F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8AC3682EECA3D400E975F7 /* Assets.xcassets */; };
@@ -16,15 +17,22 @@
 		CE8CB7F42EEE848100A3E4C4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F32EEE848100A3E4C4 /* FirebaseAuth */; };
 		CE8CB7F62EEE848100A3E4C4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F52EEE848100A3E4C4 /* FirebaseDatabase */; };
 		CE8CB7F82EEE848100A3E4C4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F72EEE848100A3E4C4 /* FirebaseFirestore */; };
+		CE9960E52EF03568005F681B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9960E42EF03567005F681B /* ProfileView.swift */; };
+		CE9960E72EF03A98005F681B /* SubjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9960E62EF03A97005F681B /* SubjectDetailView.swift */; };
+		CE9960E92EF03ECF005F681B /* QuizTimeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9960E82EF03ECE005F681B /* QuizTimeSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE0B6F8B2EEF1A700094B38A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CE8AC3612EECA3CE00E975F7 /* appHocTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appHocTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8AC3642EECA3CE00E975F7 /* appHocTapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appHocTapApp.swift; sourceTree = "<group>"; };
 		CE8AC3662EECA3CE00E975F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE8AC3682EECA3D400E975F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8AC36B2EECA3D400E975F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE8CB7ED2EECAA6300A3E4C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE9960E42EF03567005F681B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		CE9960E62EF03A97005F681B /* SubjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailView.swift; sourceTree = "<group>"; };
+		CE9960E82EF03ECE005F681B /* QuizTimeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTimeSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				CE8AC3662EECA3CE00E975F7 /* ContentView.swift */,
+				CE0B6F8B2EEF1A700094B38A /* HomeView.swift */,
+				CE9960E42EF03567005F681B /* ProfileView.swift */,
+				CE9960E62EF03A97005F681B /* SubjectDetailView.swift */,
+				CE9960E82EF03ECE005F681B /* QuizTimeSettingsView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -198,8 +210,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9960E52EF03568005F681B /* ProfileView.swift in Sources */,
+				CE0B6F8C2EEF1A700094B38A /* HomeView.swift in Sources */,
+				CE9960E72EF03A98005F681B /* SubjectDetailView.swift in Sources */,
 				CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */,
 				CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */,
+				CE9960E92EF03ECF005F681B /* QuizTimeSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

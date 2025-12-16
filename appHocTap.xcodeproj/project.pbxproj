@@ -16,6 +16,9 @@
 		CE8CB7F42EEE848100A3E4C4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F32EEE848100A3E4C4 /* FirebaseAuth */; };
 		CE8CB7F62EEE848100A3E4C4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F52EEE848100A3E4C4 /* FirebaseDatabase */; };
 		CE8CB7F82EEE848100A3E4C4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F72EEE848100A3E4C4 /* FirebaseFirestore */; };
+		CE92B2662EF1314200E2E33E /* QuizQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE92B2652EF1314200E2E33E /* QuizQuestionView.swift */; };
+		CE92B2682EF1367E00E2E33E /* ConfirmationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE92B2672EF1367E00E2E33E /* ConfirmationModal.swift */; };
+		CE92B26A2EF1370200E2E33E /* ResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE92B2692EF1370200E2E33E /* ResultScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		CE8AC3682EECA3D400E975F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8AC36B2EECA3D400E975F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE8CB7ED2EECAA6300A3E4C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE92B2652EF1314200E2E33E /* QuizQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionView.swift; sourceTree = "<group>"; };
+		CE92B2672EF1367E00E2E33E /* ConfirmationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationModal.swift; sourceTree = "<group>"; };
+		CE92B2692EF1370200E2E33E /* ResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				CE8AC3662EECA3CE00E975F7 /* ContentView.swift */,
+				CE92B2652EF1314200E2E33E /* QuizQuestionView.swift */,
+				CE92B2672EF1367E00E2E33E /* ConfirmationModal.swift */,
+				CE92B2692EF1370200E2E33E /* ResultScreen.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -198,8 +207,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE92B2682EF1367E00E2E33E /* ConfirmationModal.swift in Sources */,
+				CE92B26A2EF1370200E2E33E /* ResultScreen.swift in Sources */,
 				CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */,
 				CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */,
+				CE92B2662EF1314200E2E33E /* QuizQuestionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

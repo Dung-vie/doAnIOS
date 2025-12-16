@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0A58232EF1CC1A00CE2BEB /* SelectGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A58222EF1CC1A00CE2BEB /* SelectGradeView.swift */; };
+		CE0A58252EF1CC6500CE2BEB /* GradeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A58242EF1CC6500CE2BEB /* GradeRow.swift */; };
 		CE6E096C2EF04AB7002FFBD6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E096B2EF04AB5002FFBD6 /* LoginView.swift */; };
 		CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC3642EECA3CE00E975F7 /* appHocTapApp.swift */; };
 		CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC3662EECA3CE00E975F7 /* ContentView.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE0A58222EF1CC1A00CE2BEB /* SelectGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGradeView.swift; sourceTree = "<group>"; };
+		CE0A58242EF1CC6500CE2BEB /* GradeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeRow.swift; sourceTree = "<group>"; };
 		CE6E096B2EF04AB5002FFBD6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CE8AC3612EECA3CE00E975F7 /* appHocTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appHocTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8AC3642EECA3CE00E975F7 /* appHocTapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appHocTapApp.swift; sourceTree = "<group>"; };
@@ -46,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE0A58212EF1CBF300CE2BEB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE0A58242EF1CC6500CE2BEB /* GradeRow.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		CE8AC3582EECA3CE00E975F7 = {
 			isa = PBXGroup;
 			children = (
@@ -93,9 +105,11 @@
 		CE8CB7FA2EEEE4DF00A3E4C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE0A58212EF1CBF300CE2BEB /* Components */,
 				CE8AC3662EECA3CE00E975F7 /* ContentView.swift */,
 				CE6E096B2EF04AB5002FFBD6 /* LoginView.swift */,
 				CEEAD80F2EF0855200CC6191 /* RegisterView.swift */,
+				CE0A58222EF1CC1A00CE2BEB /* SelectGradeView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -207,6 +221,8 @@
 				CE6E096C2EF04AB7002FFBD6 /* LoginView.swift in Sources */,
 				CEEAD8102EF0855200CC6191 /* RegisterView.swift in Sources */,
 				CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */,
+				CE0A58232EF1CC1A00CE2BEB /* SelectGradeView.swift in Sources */,
+				CE0A58252EF1CC6500CE2BEB /* GradeRow.swift in Sources */,
 				CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

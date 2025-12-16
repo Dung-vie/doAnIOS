@@ -81,9 +81,9 @@ struct LoginView: View {
             Spacer().frame(height: 24)
 
             // MARK: - Login Button
-            Button(action: {
-                print("Đăng nhập")
-            }) {
+            NavigationLink{
+                SelectGradeView()
+            } label: {
                 Text("Đăng nhập")
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(.black)
@@ -105,6 +105,7 @@ struct LoginView: View {
                     Text("Đăng ký ngay")
                         .fontWeight(.bold)
                         .foregroundColor(.green)
+                        .navigationBarHidden(true)
                 }
             }
             .font(.system(size: 14))

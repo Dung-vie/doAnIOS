@@ -96,6 +96,7 @@ struct RegisterView: View {
                     Text("Đăng nhập")
                         .fontWeight(.bold)
                         .foregroundColor(.green)
+                        .navigationBarHidden(true)
                 }
             }
             .font(.system(size: 14))

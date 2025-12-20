@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE45FD322EEFD91400FC8719 /* ManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45FD312EEFD91400FC8719 /* ManagerView.swift */; };
 		CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC3642EECA3CE00E975F7 /* appHocTapApp.swift */; };
 		CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC3662EECA3CE00E975F7 /* ContentView.swift */; };
 		CE8AC3692EECA3D400E975F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8AC3682EECA3D400E975F7 /* Assets.xcassets */; };
@@ -16,15 +17,30 @@
 		CE8CB7F42EEE848100A3E4C4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F32EEE848100A3E4C4 /* FirebaseAuth */; };
 		CE8CB7F62EEE848100A3E4C4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F52EEE848100A3E4C4 /* FirebaseDatabase */; };
 		CE8CB7F82EEE848100A3E4C4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F72EEE848100A3E4C4 /* FirebaseFirestore */; };
+		CEAB75CA2EF05046003A33E2 /* StatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB75C92EF05046003A33E2 /* StatCard.swift */; };
+		CEAB75CC2EF05046003A33E2 /* AdminActionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB75CB2EF05046003A33E2 /* AdminActionCard.swift */; };
+		CEAB75CE2EF05046003A33E2 /* QuestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB75CD2EF05046003A33E2 /* QuestionListView.swift */; };
+		CEAB75D02EF05046003A33E2 /* QuestionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB75CF2EF05046003A33E2 /* QuestionRow.swift */; };
+		CEAB75D22EF05046003A33E2 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB75D12EF05046003A33E2 /* UserListView.swift */; };
+		CEAB75D42EF05046003A33E2 /* ConfirmDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB75D32EF05046003A33E2 /* ConfirmDeleteView.swift */; };
+		CEAB75D62EF05046003A33E2 /* SuccessToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB75D52EF05046003A33E2 /* SuccessToast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE45FD312EEFD91400FC8719 /* ManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerView.swift; sourceTree = "<group>"; };
 		CE8AC3612EECA3CE00E975F7 /* appHocTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appHocTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8AC3642EECA3CE00E975F7 /* appHocTapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appHocTapApp.swift; sourceTree = "<group>"; };
 		CE8AC3662EECA3CE00E975F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE8AC3682EECA3D400E975F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8AC36B2EECA3D400E975F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE8CB7ED2EECAA6300A3E4C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEAB75C92EF05046003A33E2 /* StatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCard.swift; sourceTree = "<group>"; };
+		CEAB75CB2EF05046003A33E2 /* AdminActionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminActionCard.swift; sourceTree = "<group>"; };
+		CEAB75CD2EF05046003A33E2 /* QuestionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListView.swift; sourceTree = "<group>"; };
+		CEAB75CF2EF05046003A33E2 /* QuestionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRow.swift; sourceTree = "<group>"; };
+		CEAB75D12EF05046003A33E2 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		CEAB75D32EF05046003A33E2 /* ConfirmDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteView.swift; sourceTree = "<group>"; };
+		CEAB75D52EF05046003A33E2 /* SuccessToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessToast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +105,13 @@
 		CE8CB7FA2EEEE4DF00A3E4C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CEAB75C82EF05046003A33E2 /* components */,
 				CE8AC3662EECA3CE00E975F7 /* ContentView.swift */,
+				CE45FD312EEFD91400FC8719 /* ManagerView.swift */,
+				CEAB75CD2EF05046003A33E2 /* QuestionListView.swift */,
+				CEAB75D12EF05046003A33E2 /* UserListView.swift */,
+				CEAB75D32EF05046003A33E2 /* ConfirmDeleteView.swift */,
+				CEAB75D52EF05046003A33E2 /* SuccessToast.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -116,6 +138,16 @@
 			children = (
 			);
 			path = DAL;
+			sourceTree = "<group>";
+		};
+		CEAB75C82EF05046003A33E2 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				CEAB75C92EF05046003A33E2 /* StatCard.swift */,
+				CEAB75CB2EF05046003A33E2 /* AdminActionCard.swift */,
+				CEAB75CF2EF05046003A33E2 /* QuestionRow.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +231,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */,
+				CEAB75CC2EF05046003A33E2 /* AdminActionCard.swift in Sources */,
 				CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */,
+				CEAB75D62EF05046003A33E2 /* SuccessToast.swift in Sources */,
+				CEAB75D22EF05046003A33E2 /* UserListView.swift in Sources */,
+				CE45FD322EEFD91400FC8719 /* ManagerView.swift in Sources */,
+				CEAB75CE2EF05046003A33E2 /* QuestionListView.swift in Sources */,
+				CEAB75D02EF05046003A33E2 /* QuestionRow.swift in Sources */,
+				CEAB75CA2EF05046003A33E2 /* StatCard.swift in Sources */,
+				CEAB75D42EF05046003A33E2 /* ConfirmDeleteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

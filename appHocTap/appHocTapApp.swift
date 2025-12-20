@@ -11,8 +11,9 @@ import SwiftUI
 struct appHocTapApp: App {
     var body: some Scene {
         WindowGroup {
-           ContentView()
-            
+         
+          HomeView()
+
         }
     }
 }

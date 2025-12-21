@@ -24,13 +24,16 @@ struct SelectGradeView: View {
 
                 // MARK: - Grade List
                 VStack(spacing: 16) {
-                    GradeRow(
-                        title: "Lớp 1",
-                        icon: "pencil",
-                        bgColor: Color.orange.opacity(0.35),
-                        iconColor: .orange
-                    )
-
+                    NavigationLink {
+                        HomeView()
+                    } label: {
+                        GradeRow(
+                            title: "Lớp 1",
+                            icon: "pencil",
+                            bgColor: Color.orange.opacity(0.35),
+                            iconColor: .orange
+                        )
+                    }
                     GradeRow(
                         title: "Lớp 2",
                         icon: "paintpalette.fill",

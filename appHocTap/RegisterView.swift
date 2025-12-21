@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct RegisterView: View {
-
-    
     @State private var fullName: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
+    let controller = AuthController()
+     @State private var message: String = ""
 
+    
     var body: some View {
         VStack(spacing: 24) {
 
@@ -74,16 +75,30 @@ struct RegisterView: View {
 
             // MARK: - Register Button
             Button(action: {
-                print("Đăng ký")
+                controller.register(
+                    fullName: fullName,
+                    email: email,
+                    password: password
+                ) { err in
+                    if let err = err {
+                        message = " \(err)"
+                    } else {
+                        message = " Đăng ký thành công!"
+                    }
+                }
             }) {
                 Text("Đăng ký")
-                    .font(.system(size: 18, weight: .bold))
-                    .foregroundColor(.black)
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(Color.green)
-                    .cornerRadius(18)
+                    .foregroundColor(.white)
+                    .cornerRadius(14)
             }
+
+            Text(message)
+                .foregroundColor(.blue)
+
+
 
             // MARK: - Login Link
             HStack(spacing: 4) {

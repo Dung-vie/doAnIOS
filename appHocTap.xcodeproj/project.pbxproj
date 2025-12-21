@@ -9,8 +9,22 @@
 /* Begin PBXBuildFile section */
 		CE0A58232EF1CC1A00CE2BEB /* SelectGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A58222EF1CC1A00CE2BEB /* SelectGradeView.swift */; };
 		CE0A58252EF1CC6500CE2BEB /* GradeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A58242EF1CC6500CE2BEB /* GradeRow.swift */; };
-		CE6E096C2EF04AB7002FFBD6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E096B2EF04AB5002FFBD6 /* LoginView.swift */; };
 		CE0B6F8C2EEF1A700094B38A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B6F8B2EEF1A700094B38A /* HomeView.swift */; };
+		CE17F3262EF70EDA003B7B2A /* StatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F3232EF70EDA003B7B2A /* StatCard.swift */; };
+		CE17F3272EF70EDA003B7B2A /* AdminActionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F3242EF70EDA003B7B2A /* AdminActionCard.swift */; };
+		CE17F3282EF70EDA003B7B2A /* QuestionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F3252EF70EDA003B7B2A /* QuestionRow.swift */; };
+		CE17F3302EF70F50003B7B2A /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F3292EF70F4F003B7B2A /* UserListView.swift */; };
+		CE17F3312EF70F50003B7B2A /* ResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F32A2EF70F4F003B7B2A /* ResultScreen.swift */; };
+		CE17F3322EF70F50003B7B2A /* ManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F32B2EF70F4F003B7B2A /* ManagerView.swift */; };
+		CE17F3332EF70F50003B7B2A /* ConfirmDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F32C2EF70F4F003B7B2A /* ConfirmDeleteView.swift */; };
+		CE17F3342EF70F50003B7B2A /* QuizQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F32D2EF70F4F003B7B2A /* QuizQuestionView.swift */; };
+		CE17F3352EF70F50003B7B2A /* ConfirmationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F32E2EF70F4F003B7B2A /* ConfirmationModal.swift */; };
+		CE17F3362EF70F50003B7B2A /* SuccessToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F32F2EF70F4F003B7B2A /* SuccessToast.swift */; };
+		CE17F3382EF728D3003B7B2A /* QuestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F3372EF728D3003B7B2A /* QuestionListView.swift */; };
+		CE17F33A2EF800EB003B7B2A /* MyDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F3392EF800EB003B7B2A /* MyDatabase.swift */; };
+		CE17F33C2EF80119003B7B2A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F33B2EF80119003B7B2A /* UserProfile.swift */; };
+		CE17F33E2EF80338003B7B2A /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F33D2EF80338003B7B2A /* AuthController.swift */; };
+		CE6E096C2EF04AB7002FFBD6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E096B2EF04AB5002FFBD6 /* LoginView.swift */; };
 		CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC3642EECA3CE00E975F7 /* appHocTapApp.swift */; };
 		CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC3662EECA3CE00E975F7 /* ContentView.swift */; };
 		CE8AC3692EECA3D400E975F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8AC3682EECA3D400E975F7 /* Assets.xcassets */; };
@@ -20,30 +34,41 @@
 		CE8CB7F42EEE848100A3E4C4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F32EEE848100A3E4C4 /* FirebaseAuth */; };
 		CE8CB7F62EEE848100A3E4C4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F52EEE848100A3E4C4 /* FirebaseDatabase */; };
 		CE8CB7F82EEE848100A3E4C4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F72EEE848100A3E4C4 /* FirebaseFirestore */; };
+		CE9960E52EF03568005F681B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9960E42EF03567005F681B /* ProfileView.swift */; };
+		CE9960E72EF03A98005F681B /* SubjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9960E62EF03A97005F681B /* SubjectDetailView.swift */; };
+		CE9960E92EF03ECF005F681B /* QuizTimeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9960E82EF03ECE005F681B /* QuizTimeSettingsView.swift */; };
 		CEEAD8102EF0855200CC6191 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAD80F2EF0855200CC6191 /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE0A58222EF1CC1A00CE2BEB /* SelectGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGradeView.swift; sourceTree = "<group>"; };
 		CE0A58242EF1CC6500CE2BEB /* GradeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeRow.swift; sourceTree = "<group>"; };
-		CE6E096B2EF04AB5002FFBD6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		CE9960E52EF03568005F681B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9960E42EF03567005F681B /* ProfileView.swift */; };
-		CE9960E72EF03A98005F681B /* SubjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9960E62EF03A97005F681B /* SubjectDetailView.swift */; };
-		CE9960E92EF03ECF005F681B /* QuizTimeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9960E82EF03ECE005F681B /* QuizTimeSettingsView.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXFileReference section */
 		CE0B6F8B2EEF1A700094B38A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CE17F3232EF70EDA003B7B2A /* StatCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatCard.swift; path = components/StatCard.swift; sourceTree = "<group>"; };
+		CE17F3242EF70EDA003B7B2A /* AdminActionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdminActionCard.swift; path = components/AdminActionCard.swift; sourceTree = "<group>"; };
+		CE17F3252EF70EDA003B7B2A /* QuestionRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionRow.swift; path = components/QuestionRow.swift; sourceTree = "<group>"; };
+		CE17F3292EF70F4F003B7B2A /* UserListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		CE17F32A2EF70F4F003B7B2A /* ResultScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultScreen.swift; sourceTree = "<group>"; };
+		CE17F32B2EF70F4F003B7B2A /* ManagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerView.swift; sourceTree = "<group>"; };
+		CE17F32C2EF70F4F003B7B2A /* ConfirmDeleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteView.swift; sourceTree = "<group>"; };
+		CE17F32D2EF70F4F003B7B2A /* QuizQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizQuestionView.swift; sourceTree = "<group>"; };
+		CE17F32E2EF70F4F003B7B2A /* ConfirmationModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationModal.swift; sourceTree = "<group>"; };
+		CE17F32F2EF70F4F003B7B2A /* SuccessToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessToast.swift; sourceTree = "<group>"; };
+		CE17F3372EF728D3003B7B2A /* QuestionListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionListView.swift; sourceTree = "<group>"; };
+		CE17F3392EF800EB003B7B2A /* MyDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatabase.swift; sourceTree = SOURCE_ROOT; };
+		CE17F33B2EF80119003B7B2A /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		CE17F33D2EF80338003B7B2A /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthController.swift; path = appHocTap/AuthController.swift; sourceTree = SOURCE_ROOT; };
+		CE6E096B2EF04AB5002FFBD6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CE8AC3612EECA3CE00E975F7 /* appHocTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appHocTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8AC3642EECA3CE00E975F7 /* appHocTapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appHocTapApp.swift; sourceTree = "<group>"; };
 		CE8AC3662EECA3CE00E975F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE8AC3682EECA3D400E975F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8AC36B2EECA3D400E975F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE8CB7ED2EECAA6300A3E4C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CEEAD80F2EF0855200CC6191 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		CE9960E42EF03567005F681B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CE9960E62EF03A97005F681B /* SubjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailView.swift; sourceTree = "<group>"; };
 		CE9960E82EF03ECE005F681B /* QuizTimeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTimeSettingsView.swift; sourceTree = "<group>"; };
+		CEEAD80F2EF0855200CC6191 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +89,9 @@
 		CE0A58212EF1CBF300CE2BEB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CE17F3242EF70EDA003B7B2A /* AdminActionCard.swift */,
+				CE17F3252EF70EDA003B7B2A /* QuestionRow.swift */,
+				CE17F3232EF70EDA003B7B2A /* StatCard.swift */,
 				CE0A58242EF1CC6500CE2BEB /* GradeRow.swift */,
 			);
 			name = Components;
@@ -109,6 +137,7 @@
 		CE8CB7F92EEEE4CB00A3E4C4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CE17F33B2EF80119003B7B2A /* UserProfile.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -124,6 +153,14 @@
 				CE0B6F8B2EEF1A700094B38A /* HomeView.swift */,
 				CE9960E42EF03567005F681B /* ProfileView.swift */,
 				CE9960E62EF03A97005F681B /* SubjectDetailView.swift */,
+				CE17F3372EF728D3003B7B2A /* QuestionListView.swift */,
+				CE17F32E2EF70F4F003B7B2A /* ConfirmationModal.swift */,
+				CE17F32C2EF70F4F003B7B2A /* ConfirmDeleteView.swift */,
+				CE17F32B2EF70F4F003B7B2A /* ManagerView.swift */,
+				CE17F32D2EF70F4F003B7B2A /* QuizQuestionView.swift */,
+				CE17F32A2EF70F4F003B7B2A /* ResultScreen.swift */,
+				CE17F32F2EF70F4F003B7B2A /* SuccessToast.swift */,
+				CE17F3292EF70F4F003B7B2A /* UserListView.swift */,
 				CE9960E82EF03ECE005F681B /* QuizTimeSettingsView.swift */,
 			);
 			name = Views;
@@ -132,6 +169,7 @@
 		CE8CB7FB2EEEE4EC00A3E4C4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE17F33D2EF80338003B7B2A /* AuthController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -149,6 +187,7 @@
 		CE8CB7FD2EEEE51B00A3E4C4 /* DAL */ = {
 			isa = PBXGroup;
 			children = (
+				CE17F3392EF800EB003B7B2A /* MyDatabase.swift */,
 			);
 			path = DAL;
 			sourceTree = "<group>";
@@ -233,13 +272,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE17F3282EF70EDA003B7B2A /* QuestionRow.swift in Sources */,
+				CE17F3312EF70F50003B7B2A /* ResultScreen.swift in Sources */,
+				CE17F3322EF70F50003B7B2A /* ManagerView.swift in Sources */,
 				CE6E096C2EF04AB7002FFBD6 /* LoginView.swift in Sources */,
 				CEEAD8102EF0855200CC6191 /* RegisterView.swift in Sources */,
 				CE9960E52EF03568005F681B /* ProfileView.swift in Sources */,
+				CE17F33C2EF80119003B7B2A /* UserProfile.swift in Sources */,
 				CE0B6F8C2EEF1A700094B38A /* HomeView.swift in Sources */,
 				CE9960E72EF03A98005F681B /* SubjectDetailView.swift in Sources */,
+				CE17F3272EF70EDA003B7B2A /* AdminActionCard.swift in Sources */,
+				CE17F3332EF70F50003B7B2A /* ConfirmDeleteView.swift in Sources */,
+				CE17F3352EF70F50003B7B2A /* ConfirmationModal.swift in Sources */,
+				CE17F3302EF70F50003B7B2A /* UserListView.swift in Sources */,
+				CE17F33E2EF80338003B7B2A /* AuthController.swift in Sources */,
+				CE17F3342EF70F50003B7B2A /* QuizQuestionView.swift in Sources */,
+				CE17F3362EF70F50003B7B2A /* SuccessToast.swift in Sources */,
+				CE17F3262EF70EDA003B7B2A /* StatCard.swift in Sources */,
 				CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */,
+				CE17F3382EF728D3003B7B2A /* QuestionListView.swift in Sources */,
 				CE0A58232EF1CC1A00CE2BEB /* SelectGradeView.swift in Sources */,
+				CE17F33A2EF800EB003B7B2A /* MyDatabase.swift in Sources */,
 				CE0A58252EF1CC6500CE2BEB /* GradeRow.swift in Sources */,
 				CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */,
 				CE9960E92EF03ECF005F681B /* QuizTimeSettingsView.swift in Sources */,

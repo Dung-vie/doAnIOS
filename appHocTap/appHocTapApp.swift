@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct appHocTapApp: App {
+    init() {
+        FirebaseApp.configure()
+        print("Ket noi CSDL thanh cong")
+    }
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {

@@ -72,6 +72,15 @@ struct HomeView: View {
                             .font(.title2)
 
                         Spacer()
+                        
+                        // Nút thêm câu hỏi mới
+                            NavigationLink(destination: UserCreateQuestionView()) {
+                                Image(systemName: "plus.circle.fill")
+                                    .foregroundColor(.black)
+                                    .font(.title2)
+                            }
+                            .padding(.trailing, 10)
+
 
                         NavigationLink(destination: ProfileView()) {
                             Image(systemName: "person.fill")

@@ -14,7 +14,6 @@ struct RegisterView: View {
     let controller = AuthController()
      @State private var message: String = ""
 
-    
     var body: some View {
         VStack(spacing: 24) {
 

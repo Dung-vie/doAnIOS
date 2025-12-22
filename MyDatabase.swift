@@ -16,6 +16,32 @@ class MyDatabase {
         dbRef = Database.database().reference()
     }
 
+    // Ham tai danh sach mon hoc
+        func getSubjects(completion: @escaping ([SubjectModel]) -> Void) {
+            let ref = dbRef.child("subjects")
+            
+            ref.observeSingleEvent(of: .value) { snapshot in
+                var loadedSubjects: [SubjectModel] = []
+                
+                // Duyệt qua từng con (toan, van, anh)
+                for child in snapshot.children {
+                    if let snap = child as? DataSnapshot,
+                       let value = snap.value as? [String: Any] {
+                        
+                        let id = snap.key // lấy được chữ: "toan", "van", "anh"
+                        let name = value["name"] as? String ?? ""
+                        let subtitle = value["subtitle"] as? String ?? ""
+                        let icon = value["icon"] as? String ?? "questionmark"
+                        let color = value["color"] as? String ?? "gray"
+                        
+                        let subject = SubjectModel(id: id, name: name, subtitle: subtitle, icon: icon, colorString: color)
+                        loadedSubjects.append(subject)
+                    }
+                }
+                // Trả về danh sách
+                completion(loadedSubjects)
+            }
+        }
     func register(email: String,
                   password: String,
                   fullName: String,

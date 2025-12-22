@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CE0A58232EF1CC1A00CE2BEB /* SelectGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A58222EF1CC1A00CE2BEB /* SelectGradeView.swift */; };
 		CE0A58252EF1CC6500CE2BEB /* GradeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A58242EF1CC6500CE2BEB /* GradeRow.swift */; };
-		CE0B6F8C2EEF1A700094B38A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B6F8B2EEF1A700094B38A /* HomeView.swift */; };
 		CE17F3262EF70EDA003B7B2A /* StatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F3232EF70EDA003B7B2A /* StatCard.swift */; };
 		CE17F3272EF70EDA003B7B2A /* AdminActionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F3242EF70EDA003B7B2A /* AdminActionCard.swift */; };
 		CE17F3282EF70EDA003B7B2A /* QuestionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F3252EF70EDA003B7B2A /* QuestionRow.swift */; };
@@ -24,6 +23,7 @@
 		CE17F33A2EF800EB003B7B2A /* MyDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F3392EF800EB003B7B2A /* MyDatabase.swift */; };
 		CE17F33C2EF80119003B7B2A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F33B2EF80119003B7B2A /* UserProfile.swift */; };
 		CE17F33E2EF80338003B7B2A /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F33D2EF80338003B7B2A /* AuthController.swift */; };
+		CE22873B2EF842490093DD57 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B6F8B2EEF1A700094B38A /* HomeView.swift */; };
 		CE6E096C2EF04AB7002FFBD6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E096B2EF04AB5002FFBD6 /* LoginView.swift */; };
 		CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC3642EECA3CE00E975F7 /* appHocTapApp.swift */; };
 		CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC3662EECA3CE00E975F7 /* ContentView.swift */; };
@@ -40,6 +40,7 @@
 		CE9960E52EF03568005F681B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9960E42EF03567005F681B /* ProfileView.swift */; };
 		CE9960E72EF03A98005F681B /* SubjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9960E62EF03A97005F681B /* SubjectDetailView.swift */; };
 		CE9960E92EF03ECF005F681B /* QuizTimeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9960E82EF03ECE005F681B /* QuizTimeSettingsView.swift */; };
+		CED05B752EF850A200116AE0 /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED05B742EF850A200116AE0 /* SubjectModel.swift */; };
 		CEEAD8102EF0855200CC6191 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAD80F2EF0855200CC6191 /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		CE9960E42EF03567005F681B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CE9960E62EF03A97005F681B /* SubjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailView.swift; sourceTree = "<group>"; };
 		CE9960E82EF03ECE005F681B /* QuizTimeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTimeSettingsView.swift; sourceTree = "<group>"; };
+		CED05B742EF850A200116AE0 /* SubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
 		CEEAD80F2EF0855200CC6191 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,8 +126,8 @@
 			children = (
 				CE8CB7FD2EEEE51B00A3E4C4 /* DAL */,
 				CE8CB7FB2EEEE4EC00A3E4C4 /* Controllers */,
-				CE8CB7FA2EEEE4DF00A3E4C4 /* Views */,
 				CE8CB7F92EEEE4CB00A3E4C4 /* Models */,
+				CE8CB7FA2EEEE4DF00A3E4C4 /* Views */,
 				CE8CB7FC2EEEE50300A3E4C4 /* System Files */,
 				CE8AC36A2EECA3D400E975F7 /* Preview Content */,
 			);
@@ -145,6 +147,7 @@
 			children = (
 				CEF5E2842EF13B1500EAA862 /* Question.swift */,
 				CE17F33B2EF80119003B7B2A /* UserProfile.swift */,
+				CED05B742EF850A200116AE0 /* SubjectModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -291,8 +294,8 @@
 				CE6E096C2EF04AB7002FFBD6 /* LoginView.swift in Sources */,
 				CEEAD8102EF0855200CC6191 /* RegisterView.swift in Sources */,
 				CE9960E52EF03568005F681B /* ProfileView.swift in Sources */,
+				CED05B752EF850A200116AE0 /* SubjectModel.swift in Sources */,
 				CE17F33C2EF80119003B7B2A /* UserProfile.swift in Sources */,
-				CE0B6F8C2EEF1A700094B38A /* HomeView.swift in Sources */,
 				CE9960E72EF03A98005F681B /* SubjectDetailView.swift in Sources */,
 				CE17F3272EF70EDA003B7B2A /* AdminActionCard.swift in Sources */,
 				CE17F3332EF70F50003B7B2A /* ConfirmDeleteView.swift in Sources */,
@@ -307,6 +310,7 @@
 				CE0A58232EF1CC1A00CE2BEB /* SelectGradeView.swift in Sources */,
 				CE17F33A2EF800EB003B7B2A /* MyDatabase.swift in Sources */,
 				CE0A58252EF1CC6500CE2BEB /* GradeRow.swift in Sources */,
+				CE22873B2EF842490093DD57 /* HomeView.swift in Sources */,
 				CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */,
 				CE9960E92EF03ECF005F681B /* QuizTimeSettingsView.swift in Sources */,
 			);
@@ -437,6 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"appHocTap/Preview Content\"";
+				DEVELOPMENT_TEAM = 3B5UXJB78J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -465,6 +470,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"appHocTap/Preview Content\"";
+				DEVELOPMENT_TEAM = 3B5UXJB78J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

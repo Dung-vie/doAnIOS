@@ -8,7 +8,7 @@ struct HomeView: View {
     }
 
     @State private var selectedTab: Tab = .profile
-
+    @State private var subjects: [SubjectModel] = []
     // ✅ Data demo cho từng môn
     private var mathItems: [LessonRowModel] {
         [
@@ -104,53 +104,38 @@ struct HomeView: View {
                         .font(.system(size: 20, weight: .bold))
                         .padding(.horizontal, 20)
 
-                    LazyVGrid(
-                        columns: [GridItem(.flexible()), GridItem(.flexible())],
-                        spacing: 20
-                    ) {
-
-                        NavigationLink {
-                            SubjectDetailView(title: "Toán Lớp 1", items: mathItems)
-                        } label: {
-                            subjectCard(
-                                icon: "plus.slash.minus",
-                                bgColor: Color.orange.opacity(0.2),
-                                title: "Toán",
-                                subtitle: "Chủ đề Toán học"
-                            )
-                        }
-                        .buttonStyle(.plain)
-
-                        NavigationLink {
-                            SubjectDetailView(title: "Văn Lớp 1", items: literatureItems)
-                        } label: {
-                            subjectCard(
-                                icon: "book.fill",
-                                bgColor: Color.blue.opacity(0.15),
-                                title: "Văn",
-                                subtitle: "Chủ đề Văn học"
-                            )
-                        }
-                        .buttonStyle(.plain)
-
-                        NavigationLink {
-                            SubjectDetailView(title: "Tiếng Anh Lớp 1", items: englishItems)
-                        } label: {
-                            subjectCard(
-                                icon: "character.book.closed",
-                                bgColor: Color.green.opacity(0.15),
-                                title: "Anh",
-                                subtitle: "Chủ đề Tiếng Anh"
-                            )
-                        }
-                        .buttonStyle(.plain)
-                    }
-                    .padding(.horizontal, 20)
-
+                    // MARK: - Grid Môn Học (Dynamic)
+                                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+                                            ForEach(subjects) { subject in
+                                                // Gọi hàm getDestinationView để lấy màn hình đích
+                                                NavigationLink(destination: getDestinationView(for: subject)) {
+                                                    subjectCard(
+                                                        icon: subject.icon,
+                                                        bgColor: subject.color,
+                                                        title: subject.name,
+                                                        subtitle: subject.subtitle,
+                                                        iconColor: subject.iconColor
+                                                    )
+                                                }
+                                                .buttonStyle(.plain)
+                                            }
+                                        }
+                                        .padding(.horizontal, 20)
                     Spacer()
                 }
             }
             .navigationBarHidden(true)
+            .onAppear {
+                print("Đang tải danh sách môn học...")
+                
+                MyDatabase.shared.getSubjects { downloadedSubjects in
+                    // Bắt buộc cập nhật UI trên luồng chính (Main Thread)
+                    DispatchQueue.main.async {
+                        self.subjects = downloadedSubjects
+                    }
+                    print("Đã tải xong: \(downloadedSubjects.count) môn")
+                }
+            }
         }
     }
 
@@ -171,12 +156,7 @@ struct HomeView: View {
         .buttonStyle(.plain)
     }
 
-    private func subjectCard(
-        icon: String,
-        bgColor: Color,
-        title: String,
-        subtitle: String
-    ) -> some View {
+private func subjectCard(icon: String, bgColor: Color, title: String, subtitle: String, iconColor: Color) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
@@ -184,8 +164,8 @@ struct HomeView: View {
                     .frame(height: 140)
 
                 Image(systemName: icon)
-                    .font(.system(size: 40))
-                    .foregroundColor(.orange)
+                        .font(.system(size: 40))
+                        .foregroundColor(iconColor)
             }
 
             Text(title)
@@ -196,6 +176,18 @@ struct HomeView: View {
                 .foregroundColor(.gray)
         }
     }
+    
+    // Hàm này giúp tách logic ra khỏi body, tránh lỗi compiler timeout
+        @ViewBuilder
+        private func getDestinationView(for subject: SubjectModel) -> some View {
+            if subject.id == "toan" {
+                SubjectDetailView(title: subject.name, items: mathItems)
+            } else if subject.id == "van" {
+                SubjectDetailView(title: subject.name, items: literatureItems)
+            } else {
+                SubjectDetailView(title: subject.name, items: englishItems)
+            }
+        }
 }
 
 //struct HomeView_Previews: PreviewProvider {

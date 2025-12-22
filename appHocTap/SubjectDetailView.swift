@@ -117,7 +117,7 @@ private struct LessonCard: View {
                     .foregroundColor(.black)
 
                 if item.status == .done {
-                    HStack(spacing: 6) {
+                    HStack(spacing: 6) {	
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundColor(.green)
                         Text("Đã hoàn thành")
@@ -181,4 +181,5 @@ struct SubjectDetailView_Previews: PreviewProvider {
         }
     }
 }
+
 

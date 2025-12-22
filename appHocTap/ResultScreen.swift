@@ -2,28 +2,38 @@
 //  ResultScreen.swift
 //  appHocTap
 //
-//  Created by  User on 16.12.2025.
+//  Created by User on 16.12.2025.
 //
 
 import SwiftUI
 
 struct ResultScreen: View {
-    // Màu xanh chủ đạo
+    // --- 1. BIẾN NHẬN DỮ LIỆU TỪ BÊN NGOÀI ---
+    var score: Int                  // Số câu đúng (VD: 7)
+    var totalQuestions: Int         // Tổng số câu (VD: 10)
+    var wrongAnswers: [String]      // Danh sách các câu sai (để lưu lại)
+    
+    // Biến môi trường để đóng màn hình (quay về trang trước)
+    @Environment(\.presentationMode) var presentationMode
+
+    // Màu sắc giao diện
     let primaryGreen = Color(red: 0.0, green: 0.85, blue: 0.45)
-    // Màu đỏ cho trạng thái sai
     let primaryRed = Color(red: 1.0, green: 0.4, blue: 0.4)
     
     var body: some View {
         ZStack {
-            // Nền tổng thể màu trắng hơi xám nhẹ (hoặc trắng tinh tùy ý)
+            // Nền tổng thể
             Color.white
                 .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 0) {
                 
-                // --- 1. HEADER ---
+                // --- HEADER ---
                 HStack {
-                    Button(action: {}) {
+                    Button(action: {
+                        // Đóng màn hình khi bấm X
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
                         Image(systemName: "xmark")
                             .font(.system(size: 20))
                             .foregroundColor(.black)
@@ -42,13 +52,15 @@ struct ResultScreen: View {
                 }
                 .padding()
                 
-                // --- 2. ĐIỂM SỐ (Score Section) ---
+                // --- 2. ĐIỂM SỐ (HIỂN THỊ DỮ LIỆU THẬT) ---
                 VStack(spacing: 8) {
-                    Text("Bạn đúng 7/10 câu")
+                    // Hiển thị điểm số dựa trên biến score và totalQuestions
+                    Text("Bạn đúng \(score)/\(totalQuestions) câu")
                         .font(.system(size: 28, weight: .heavy))
                         .foregroundColor(.black)
                     
-                    Text("Làm tốt lắm!")
+                    // Logic hiển thị lời khen (Trên 50% thì khen, dưới thì động viên)
+                    Text(Double(score) / Double(totalQuestions) >= 0.5 ? "Làm tốt lắm!" : "Cố gắng lần sau nhé!")
                         .font(.subheadline)
                         .foregroundColor(.gray)
                 }
@@ -62,10 +74,12 @@ struct ResultScreen: View {
                             .fontWeight(.bold)
                             .padding(.horizontal)
                         
-                        // Danh sách các thẻ (Cards)
+                        // LƯU Ý CHO NHÓM:
+                        // Phần hiển thị chi tiết từng câu hỏi dưới đây đang là DỮ LIỆU MẪU (Hardcode).
+                        // Để hiển thị đúng bài vừa làm, bạn Dung cần truyền danh sách câu hỏi vào đây
+                        // và dùng vòng lặp ForEach.
                         VStack(spacing: 12) {
                             
-                            // Câu 1: ĐÚNG
                             AnswerRow(
                                 title: "Câu 1: Thủ đô của Việt...",
                                 userChoice: "Hà Nội",
@@ -74,17 +88,15 @@ struct ResultScreen: View {
                                 primaryRed: primaryRed
                             )
                             
-                            // Câu 2: SAI
                             AnswerRow(
                                 title: "Câu 2: Đâu là hành tinh lớn...",
                                 userChoice: "Trái Đất",
-                                correctChoice: "Sao Mộc", // Truyền thêm đáp án đúng nếu sai
+                                correctChoice: "Sao Mộc",
                                 isCorrect: false,
                                 primaryGreen: primaryGreen,
                                 primaryRed: primaryRed
                             )
                             
-                            // Câu 3: ĐÚNG
                             AnswerRow(
                                 title: "Câu 3: 2 + 2 bằng mấy?",
                                 userChoice: "4",
@@ -100,8 +112,11 @@ struct ResultScreen: View {
                 
                 // --- 4. FOOTER (Nút bấm) ---
                 VStack(spacing: 12) {
-                    // Nút Làm lại (Xanh đậm)
-                    Button(action: {}) {
+                    // Nút Làm lại
+                    Button(action: {
+                        // Logic làm lại bài (Reset game) sẽ do bạn Dung xử lý
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
                         Text("Làm lại")
                             .font(.headline)
                             .fontWeight(.bold)
@@ -112,25 +127,43 @@ struct ResultScreen: View {
                             .cornerRadius(30)
                     }
                     
-                    // Nút Về Home (Xanh nhạt)
-                    Button(action: {}) {
+                    // Nút Về Home
+                    Button(action: {
+                        // Đóng màn hình kết quả để về trang trước
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
                         Text("Về Home")
                             .font(.headline)
                             .fontWeight(.bold)
                             .foregroundColor(.black)
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 16)
-                            .background(primaryGreen.opacity(0.25)) // Độ mờ để tạo màu xanh nhạt
+                            .background(primaryGreen.opacity(0.25))
                             .cornerRadius(30)
                     }
                 }
                 .padding(20)
             }
         }
+        // --- 5. QUAN TRỌNG: TỰ ĐỘNG LƯU KẾT QUẢ ---
+        // Khi màn hình hiện ra (.onAppear), gọi Manager để lưu xuống máy ngay lập tức
+        .onAppear {
+            MyDatabase.shared.saveQuizResult(
+        score: score,
+        total: totalQuestions,
+        wrongAnswers: [] // Truyền list câu sai của bạn vào đây
+    ) { success in
+        if success {
+            print("✅ Đã lưu lên Firebase")
+        } else {
+            print("❌ Lưu thất bại")
+        }
+    }
+        }
     }
 }
 
-// --- COMPONENT CON: Dòng hiển thị đáp án ---
+// --- COMPONENT CON: Dòng hiển thị đáp án (Giữ nguyên) ---
 struct AnswerRow: View {
     let title: String
     let userChoice: String
@@ -141,7 +174,7 @@ struct AnswerRow: View {
     
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            // 1. Icon Trạng thái (Tròn)
+            // 1. Icon Trạng thái
             ZStack {
                 Circle()
                     .fill(isCorrect ? primaryGreen.opacity(0.15) : primaryRed.opacity(0.15))
@@ -162,7 +195,6 @@ struct AnswerRow: View {
                     .font(.system(size: 13))
                     .foregroundColor(.gray)
                 
-                // Nếu sai thì hiện thêm dòng đáp án đúng màu xanh
                 if !isCorrect, let correct = correctChoice {
                     Text("Đáp án đúng: \(correct)")
                         .font(.system(size: 13, weight: .semibold))
@@ -172,27 +204,19 @@ struct AnswerRow: View {
             
             Spacer()
             
-            // 3. Chữ "Đúng" / "Sai" bên phải
+            // 3. Chữ Đúng/Sai
             Text(isCorrect ? "Đúng" : "Sai")
                 .font(.system(size: 14, weight: .bold))
                 .foregroundColor(isCorrect ? primaryGreen : primaryRed)
-                .padding(.top, 4) // Căn chỉnh cho ngang hàng với tiêu đề
+                .padding(.top, 4)
         }
         .padding(16)
         .background(Color.white)
         .cornerRadius(16)
-        // Hiệu ứng đổ bóng nhẹ cho thẻ
         .shadow(color: Color.black.opacity(0.04), radius: 5, x: 0, y: 2)
-        // Viền mỏng xung quanh thẻ (tùy chọn, trong ảnh có vẻ chỉ dùng shadow)
         .overlay(
             RoundedRectangle(cornerRadius: 16)
                 .stroke(Color.gray.opacity(0.1), lineWidth: 1)
         )
     }
 }
-
-//struct ResultScreen_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ResultScreen()
-//    }
-//}

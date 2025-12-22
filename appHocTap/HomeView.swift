@@ -9,55 +9,87 @@ struct HomeView: View {
 
     @State private var selectedTab: Tab = .profile
 
-    // ✅ Data demo cho từng môn
     private var mathItems: [LessonRowModel] {
         [
             .init(iconSystemName: "dumbbell.fill", iconBg: Color.blue.opacity(0.18),
-                  title: "Luyện Tập", subtitle: "Câu hỏi tổng hợp", status: .none),
+                  title: "Luyện Tập", subtitle: "Câu hỏi tổng hợp", status: .none,
+                  lessonKey: "practice"),
+
             .init(iconSystemName: "123.rectangle.fill", iconBg: Color.green.opacity(0.18),
-                  title: "Bài 1: Đếm số từ 1 đến 10", subtitle: "Luyện tập nhận biết số", status: .none),
+                  title: "Bài 1: Đếm số từ 1 đến 10", subtitle: "Luyện tập nhận biết số", status: .none,
+                  lessonKey: "lesson1"),
+
             .init(iconSystemName: "arrow.left.arrow.right", iconBg: Color.green.opacity(0.18),
-                  title: "Bài 2: So Sánh Lớn Hơn, Nhỏ Hơn", subtitle: "", status: .done),
+                  title: "Bài 2: So Sánh Lớn Hơn, Nhỏ Hơn", subtitle: "", status: .done,
+                  lessonKey: "lesson2"),
+
             .init(iconSystemName: "plus", iconBg: Color.green.opacity(0.18),
-                  title: "Bài 3: Phép Cộng Đơn Giản", subtitle: "", status: .notDone),
-            .init(iconSystemName: "triangle.square.circle", iconBg: Color.green.opacity(0.18),
-                  title: "Bài 4: Hình Học Vui Nhộn", subtitle: "Nhận biết các hình khối", status: .none),
+                  title: "Bài 3: Phép Cộng Đơn Giản", subtitle: "", status: .notDone,
+                  lessonKey: "lesson3"),
+
+            .init(iconSystemName: "square.grid.2x2.fill", iconBg: Color.green.opacity(0.18),
+                  title: "Bài 4: Hình Học Vui Nhộn", subtitle: "Nhận biết các hình khối", status: .none,
+                  lessonKey: "lesson4"),
+
             .init(iconSystemName: "minus", iconBg: Color.green.opacity(0.18),
-                  title: "Bài 5: Phép Trừ Cơ Bản", subtitle: "Luyện tập phép trừ", status: .none)
+                  title: "Bài 5: Phép Trừ Cơ Bản", subtitle: "Luyện tập phép trừ", status: .none,
+                  lessonKey: "lesson5")
         ]
     }
 
     private var literatureItems: [LessonRowModel] {
         [
             .init(iconSystemName: "pencil.and.outline", iconBg: Color.blue.opacity(0.18),
-                  title: "Luyện Tập", subtitle: "Câu hỏi tổng hợp", status: .none),
+                  title: "Luyện Tập", subtitle: "Câu hỏi tổng hợp", status: .none,
+                  lessonKey: "practice"),
+
             .init(iconSystemName: "text.book.closed", iconBg: Color.green.opacity(0.18),
-                  title: "Bài 1: Bảng chữ cái", subtitle: "Nhận biết chữ", status: .none),
+                  title: "Bài 1: Bảng chữ cái", subtitle: "Nhận biết chữ", status: .none,
+                  lessonKey: "lesson1"),
+
             .init(iconSystemName: "quote.opening", iconBg: Color.green.opacity(0.18),
-                  title: "Bài 2: Từ vựng cơ bản", subtitle: "", status: .done),
+                  title: "Bài 2: Từ vựng cơ bản", subtitle: "", status: .done,
+                  lessonKey: "lesson2"),
+
             .init(iconSystemName: "doc.text", iconBg: Color.green.opacity(0.18),
-                  title: "Bài 3: Đọc hiểu ngắn", subtitle: "", status: .notDone),
+                  title: "Bài 3: Đọc hiểu ngắn", subtitle: "", status: .notDone,
+                  lessonKey: "lesson3"),
+
             .init(iconSystemName: "book", iconBg: Color.green.opacity(0.18),
-                  title: "Bài 4: Kể chuyện", subtitle: "Luyện tập kể chuyện", status: .none),
+                  title: "Bài 4: Kể chuyện", subtitle: "Luyện tập kể chuyện", status: .none,
+                  lessonKey: "lesson4"),
+
             .init(iconSystemName: "signature", iconBg: Color.green.opacity(0.18),
-                  title: "Bài 5: Tập viết", subtitle: "Luyện tập viết chữ", status: .none)
+                  title: "Bài 5: Tập viết", subtitle: "Luyện tập viết chữ", status: .none,
+                  lessonKey: "lesson5")
         ]
     }
 
     private var englishItems: [LessonRowModel] {
         [
             .init(iconSystemName: "speaker.wave.2.fill", iconBg: Color.blue.opacity(0.18),
-                  title: "Luyện Tập", subtitle: "Nghe - nói tổng hợp", status: .none),
+                  title: "Luyện Tập", subtitle: "Nghe - nói tổng hợp", status: .none,
+                  lessonKey: "practice"),
+
             .init(iconSystemName: "character.book.closed", iconBg: Color.green.opacity(0.18),
-                  title: "Bài 1: Alphabet", subtitle: "Nhận biết chữ cái", status: .none),
+                  title: "Bài 1: Alphabet", subtitle: "Nhận biết chữ cái", status: .none,
+                  lessonKey: "lesson1"),
+
             .init(iconSystemName: "textformat.abc", iconBg: Color.green.opacity(0.18),
-                  title: "Bài 2: Từ vựng chủ đề", subtitle: "", status: .done),
+                  title: "Bài 2: Từ vựng chủ đề", subtitle: "", status: .done,
+                  lessonKey: "lesson2"),
+
             .init(iconSystemName: "mic.fill", iconBg: Color.green.opacity(0.18),
-                  title: "Bài 3: Phát âm cơ bản", subtitle: "", status: .notDone),
+                  title: "Bài 3: Phát âm cơ bản", subtitle: "", status: .notDone,
+                  lessonKey: "lesson3"),
+
             .init(iconSystemName: "book.fill", iconBg: Color.green.opacity(0.18),
-                  title: "Bài 4: Reading", subtitle: "Đọc hiểu đơn giản", status: .none),
+                  title: "Bài 4: Reading", subtitle: "Đọc hiểu đơn giản", status: .none,
+                  lessonKey: "lesson4"),
+
             .init(iconSystemName: "pencil", iconBg: Color.green.opacity(0.18),
-                  title: "Bài 5: Writing", subtitle: "Tập viết câu ngắn", status: .none)
+                  title: "Bài 5: Writing", subtitle: "Tập viết câu ngắn", status: .none,
+                  lessonKey: "lesson5")
         ]
     }
 
@@ -110,38 +142,32 @@ struct HomeView: View {
                     ) {
 
                         NavigationLink {
-                            SubjectDetailView(title: "Toán Lớp 1", items: mathItems)
+                            SubjectDetailView(title: "Toán Lớp 1", items: mathItems, subjectKey: "toan_1")
                         } label: {
-                            subjectCard(
-                                icon: "plus.slash.minus",
-                                bgColor: Color.orange.opacity(0.2),
-                                title: "Toán",
-                                subtitle: "Chủ đề Toán học"
-                            )
+                            subjectCard(icon: "plus.slash.minus",
+                                        bgColor: Color.orange.opacity(0.2),
+                                        title: "Toán",
+                                        subtitle: "Chủ đề Toán học")
                         }
                         .buttonStyle(.plain)
 
                         NavigationLink {
-                            SubjectDetailView(title: "Văn Lớp 1", items: literatureItems)
+                            SubjectDetailView(title: "Văn Lớp 1", items: literatureItems, subjectKey: "van_1")
                         } label: {
-                            subjectCard(
-                                icon: "book.fill",
-                                bgColor: Color.blue.opacity(0.15),
-                                title: "Văn",
-                                subtitle: "Chủ đề Văn học"
-                            )
+                            subjectCard(icon: "book.fill",
+                                        bgColor: Color.blue.opacity(0.15),
+                                        title: "Văn",
+                                        subtitle: "Chủ đề Văn học")
                         }
                         .buttonStyle(.plain)
 
                         NavigationLink {
-                            SubjectDetailView(title: "Tiếng Anh Lớp 1", items: englishItems)
+                            SubjectDetailView(title: "Tiếng Anh Lớp 1", items: englishItems, subjectKey: "anh_1")
                         } label: {
-                            subjectCard(
-                                icon: "character.book.closed",
-                                bgColor: Color.green.opacity(0.15),
-                                title: "Anh",
-                                subtitle: "Chủ đề Tiếng Anh"
-                            )
+                            subjectCard(icon: "character.book.closed",
+                                        bgColor: Color.green.opacity(0.15),
+                                        title: "Anh",
+                                        subtitle: "Chủ đề Tiếng Anh")
                         }
                         .buttonStyle(.plain)
                     }
@@ -188,18 +214,8 @@ struct HomeView: View {
                     .foregroundColor(.orange)
             }
 
-            Text(title)
-                .font(.headline)
-
-            Text(subtitle)
-                .font(.subheadline)
-                .foregroundColor(.gray)
+            Text(title).font(.headline)
+            Text(subtitle).font(.subheadline).foregroundColor(.gray)
         }
     }
 }
-
-//struct HomeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HomeView()
-//    }
-//}

@@ -1,26 +1,37 @@
-//
-//  SubjectDetailView.swift
-//  appHocTap
-//
-//  Created by  User on 15.12.2025.
-//
-
 import SwiftUI
+import Foundation
 
 struct SubjectDetailView: View {
 
     @Environment(\.dismiss) private var dismiss
-    @State private var showTimeSettings = false
-    @State private var quizTimeText: String = "10 phút"
 
+    let subjectKey: String
     let title: String
     let items: [LessonRowModel]
+
+    // chọn bài nào thì set lessonKey
+    @State private var selectedLessonKey: String = "practice"
+    @State private var selectedLessonId: String? = nil
+
+    @State private var showTimeSettings = false
+    @State private var selectedIsUnlimited = false
+    @State private var selectedMinutes = 10
+
+    @State private var pendingStartQuiz = false
+    @State private var startQuiz = false
+    @State private var quizSessionId = UUID()
+
+    init(title: String, items: [LessonRowModel], subjectKey: String) {
+        self.title = title
+        self.items = items
+        self.subjectKey = subjectKey
+    }
 
     var body: some View {
         ScrollView {
             VStack(spacing: 14) {
 
-                // Header (back + title)
+                // Header
                 HStack {
                     Button { dismiss() } label: {
                         Image(systemName: "chevron.left")
@@ -41,20 +52,30 @@ struct SubjectDetailView: View {
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
 
+                // Hidden NavigationLink -> Quiz screen
+                NavigationLink(
+                    destination: QuizQuestionScreen(
+                        bankKey: subjectKey,
+                        lessonId: selectedLessonId, // ví dụ "lesson1" / "lesson2" / "practice"
+                        isUnlimited: selectedIsUnlimited,
+                        minutes: selectedMinutes
+                    )
+                    .id(quizSessionId),
+                    isActive: $startQuiz
+                ) { EmptyView() }
+                .hidden()
+
                 VStack(spacing: 14) {
                     ForEach(items) { item in
                         Button {
-                            if item.title == "Luyện Tập" {
-                                showTimeSettings = true
-                            } else {
-                                // TODO: mở bài học
-                            }
+                            // ✅ bấm bài nào cũng mở quiz
+                            selectedLessonKey = item.lessonKey
+                            showTimeSettings = true
                         } label: {
                             LessonCard(item: item)
                         }
                         .buttonStyle(.plain)
                     }
-
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, 6)
@@ -65,42 +86,36 @@ struct SubjectDetailView: View {
         }
         .background(Color(white: 0.96).ignoresSafeArea())
         .navigationBarHidden(true)
-        .sheet(isPresented: $showTimeSettings) {
-            QuizTimeSettingsView { isUnlimited, minutes in
-                quizTimeText = isUnlimited ? "Không giới hạn" : "\(minutes) phút"
-                // TODO: lưu setting này để dùng khi bắt đầu quiz
+        .sheet(isPresented: $showTimeSettings, onDismiss: {
+            if pendingStartQuiz {
+                pendingStartQuiz = false
+                startQuiz = true
+            }
+        }) {
+            QuizTimeSettingsView(
+                initialIsUnlimited: selectedIsUnlimited,
+                initialMinutes: selectedMinutes
+            ) { isUnlimited, minutes in
+                selectedIsUnlimited = isUnlimited
+                selectedMinutes = minutes
+
+                // reset session để SwiftUI không cache màn quiz cũ
+                quizSessionId = UUID()
+
+                pendingStartQuiz = true
+                showTimeSettings = false
             }
         }
-
     }
-}
-
-// MARK: - Model
-
-struct LessonRowModel: Identifiable {
-    enum Status {
-        case none
-        case done
-        case notDone
-    }
-
-    let id = UUID()
-    let iconSystemName: String
-    let iconBg: Color
-    let title: String
-    let subtitle: String
-    let status: Status
 }
 
 // MARK: - Card
-
 private struct LessonCard: View {
     let item: LessonRowModel
 
     var body: some View {
         HStack(spacing: 14) {
 
-            // Icon box
             ZStack {
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .fill(item.iconBg)
@@ -152,33 +167,3 @@ private struct LessonCard: View {
         .shadow(color: .black.opacity(0.06), radius: 10, x: 0, y: 6)
     }
 }
-
-struct SubjectDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            SubjectDetailView(
-                title: "Toán Lớp 1",
-                items: [
-                    .init(iconSystemName: "dumbbell.fill", iconBg: Color.blue.opacity(0.18),
-                          title: "Luyện Tập", subtitle: "Câu hỏi tổng hợp", status: .none),
-
-                    .init(iconSystemName: "123.rectangle.fill", iconBg: Color.green.opacity(0.18),
-                          title: "Bài 1: Đếm số từ 1 đến 10", subtitle: "Luyện tập nhận biết số", status: .none),
-
-                    .init(iconSystemName: "arrow.left.arrow.right", iconBg: Color.green.opacity(0.18),
-                          title: "Bài 2: So Sánh Lớn Hơn, Nhỏ Hơn", subtitle: "", status: .done),
-
-                    .init(iconSystemName: "plus", iconBg: Color.green.opacity(0.18),
-                          title: "Bài 3: Phép Cộng Đơn Giản", subtitle: "", status: .notDone),
-
-                    .init(iconSystemName: "triangle.square.circle", iconBg: Color.green.opacity(0.18),
-                          title: "Bài 4: Hình Học Vui Nhộn", subtitle: "Nhận biết các hình khối", status: .none),
-
-                    .init(iconSystemName: "minus", iconBg: Color.green.opacity(0.18),
-                          title: "Bài 5: Phép Trừ Cơ Bản", subtitle: "Luyện tập phép trừ", status: .none)
-                ]
-            )
-        }
-    }
-}
-

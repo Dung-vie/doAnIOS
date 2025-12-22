@@ -16,6 +16,9 @@
 		CE8CB7F42EEE848100A3E4C4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F32EEE848100A3E4C4 /* FirebaseAuth */; };
 		CE8CB7F62EEE848100A3E4C4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F52EEE848100A3E4C4 /* FirebaseDatabase */; };
 		CE8CB7F82EEE848100A3E4C4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F72EEE848100A3E4C4 /* FirebaseFirestore */; };
+		CEF5E2852EF13B1500EAA862 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5E2842EF13B1500EAA862 /* Question.swift */; };
+		CEF5E2872EF13B8400EAA862 /* EditQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5E2862EF13B8300EAA862 /* EditQuestionView.swift */; };
+		CEF5E2892EF13BDA00EAA862 /* AddQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5E2882EF13BD900EAA862 /* AddQuestionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		CE8AC3682EECA3D400E975F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8AC36B2EECA3D400E975F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE8CB7ED2EECAA6300A3E4C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEF5E2842EF13B1500EAA862 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		CEF5E2862EF13B8300EAA862 /* EditQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuestionView.swift; sourceTree = "<group>"; };
+		CEF5E2882EF13BD900EAA862 /* AddQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 		CE8CB7F92EEEE4CB00A3E4C4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CEF5E2842EF13B1500EAA862 /* Question.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -90,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				CE8AC3662EECA3CE00E975F7 /* ContentView.swift */,
+				CEF5E2862EF13B8300EAA862 /* EditQuestionView.swift */,
+				CEF5E2882EF13BD900EAA862 /* AddQuestionView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -198,7 +207,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF5E2852EF13B1500EAA862 /* Question.swift in Sources */,
 				CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */,
+				CEF5E2872EF13B8400EAA862 /* EditQuestionView.swift in Sources */,
+				CEF5E2892EF13BDA00EAA862 /* AddQuestionView.swift in Sources */,
 				CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

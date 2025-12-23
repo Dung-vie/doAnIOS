@@ -24,6 +24,12 @@
 		CE17F33C2EF80119003B7B2A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F33B2EF80119003B7B2A /* UserProfile.swift */; };
 		CE17F33E2EF80338003B7B2A /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17F33D2EF80338003B7B2A /* AuthController.swift */; };
 		CE22873B2EF842490093DD57 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B6F8B2EEF1A700094B38A /* HomeView.swift */; };
+		CE51158E2EF9A1DF00588471 /* GradeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51158D2EF9A1DF00588471 /* GradeModel.swift */; };
+		CE5115902EF9A21200588471 /* GradeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51158F2EF9A21200588471 /* GradeController.swift */; };
+		CE5115922EF9AA7200588471 /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5115912EF9AA7200588471 /* LessonModel.swift */; };
+		CE5115942EF9AAB600588471 /* LessonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5115932EF9AAB600588471 /* LessonController.swift */; };
+		CE5115962EF9CA1D00588471 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5115952EF9CA1C00588471 /* QuestionController.swift */; };
+		CE5115982EF9D8C700588471 /* SubjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5115972EF9D8C700588471 /* SubjectManager.swift */; };
 		CE6E096C2EF04AB7002FFBD6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E096B2EF04AB5002FFBD6 /* LoginView.swift */; };
 		CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC3642EECA3CE00E975F7 /* appHocTapApp.swift */; };
 		CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC3662EECA3CE00E975F7 /* ContentView.swift */; };
@@ -34,14 +40,19 @@
 		CE8CB7F42EEE848100A3E4C4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F32EEE848100A3E4C4 /* FirebaseAuth */; };
 		CE8CB7F62EEE848100A3E4C4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F52EEE848100A3E4C4 /* FirebaseDatabase */; };
 		CE8CB7F82EEE848100A3E4C4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CB7F72EEE848100A3E4C4 /* FirebaseFirestore */; };
-		CEF5E2852EF13B1500EAA862 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5E2842EF13B1500EAA862 /* Question.swift */; };
-		CEF5E2872EF13B8400EAA862 /* EditQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5E2862EF13B8300EAA862 /* EditQuestionView.swift */; };
-		CEF5E2892EF13BDA00EAA862 /* AddQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5E2882EF13BD900EAA862 /* AddQuestionView.swift */; };
 		CE9960E52EF03568005F681B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9960E42EF03567005F681B /* ProfileView.swift */; };
 		CE9960E72EF03A98005F681B /* SubjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9960E62EF03A97005F681B /* SubjectDetailView.swift */; };
 		CE9960E92EF03ECF005F681B /* QuizTimeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9960E82EF03ECE005F681B /* QuizTimeSettingsView.swift */; };
+		CEC8484E2EF93CBA000FF9F5 /* SubjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8484D2EF93CBA000FF9F5 /* SubjectController.swift */; };
+		CEC848502EF947D7000FF9F5 /* LessonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8484F2EF947D7000FF9F5 /* LessonManager.swift */; };
+		CEC848522EF949CB000FF9F5 /* AddLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC848512EF949CB000FF9F5 /* AddLesson.swift */; };
+		CEC848542EF94AB5000FF9F5 /* EditLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC848532EF94AB5000FF9F5 /* EditLesson.swift */; };
+		CEC848562EF94BAE000FF9F5 /* ClassManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC848552EF94BAE000FF9F5 /* ClassManager.swift */; };
 		CED05B752EF850A200116AE0 /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED05B742EF850A200116AE0 /* SubjectModel.swift */; };
 		CEEAD8102EF0855200CC6191 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAD80F2EF0855200CC6191 /* RegisterView.swift */; };
+		CEF5E2852EF13B1500EAA862 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5E2842EF13B1500EAA862 /* Question.swift */; };
+		CEF5E2872EF13B8400EAA862 /* EditQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5E2862EF13B8300EAA862 /* EditQuestionView.swift */; };
+		CEF5E2892EF13BDA00EAA862 /* AddQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5E2882EF13BD900EAA862 /* AddQuestionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +73,12 @@
 		CE17F3392EF800EB003B7B2A /* MyDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatabase.swift; sourceTree = SOURCE_ROOT; };
 		CE17F33B2EF80119003B7B2A /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		CE17F33D2EF80338003B7B2A /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthController.swift; path = appHocTap/AuthController.swift; sourceTree = SOURCE_ROOT; };
+		CE51158D2EF9A1DF00588471 /* GradeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeModel.swift; sourceTree = "<group>"; };
+		CE51158F2EF9A21200588471 /* GradeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GradeController.swift; path = appHocTap/GradeController.swift; sourceTree = SOURCE_ROOT; };
+		CE5115912EF9AA7200588471 /* LessonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModel.swift; sourceTree = "<group>"; };
+		CE5115932EF9AAB600588471 /* LessonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LessonController.swift; path = appHocTap/LessonController.swift; sourceTree = SOURCE_ROOT; };
+		CE5115952EF9CA1C00588471 /* QuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionController.swift; path = appHocTap/QuestionController.swift; sourceTree = SOURCE_ROOT; };
+		CE5115972EF9D8C700588471 /* SubjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectManager.swift; sourceTree = "<group>"; };
 		CE6E096B2EF04AB5002FFBD6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CE8AC3612EECA3CE00E975F7 /* appHocTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appHocTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8AC3642EECA3CE00E975F7 /* appHocTapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appHocTapApp.swift; sourceTree = "<group>"; };
@@ -69,14 +86,19 @@
 		CE8AC3682EECA3D400E975F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8AC36B2EECA3D400E975F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE8CB7ED2EECAA6300A3E4C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CEF5E2842EF13B1500EAA862 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		CEF5E2862EF13B8300EAA862 /* EditQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuestionView.swift; sourceTree = "<group>"; };
-		CEF5E2882EF13BD900EAA862 /* AddQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionView.swift; sourceTree = "<group>"; };
 		CE9960E42EF03567005F681B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CE9960E62EF03A97005F681B /* SubjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailView.swift; sourceTree = "<group>"; };
 		CE9960E82EF03ECE005F681B /* QuizTimeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTimeSettingsView.swift; sourceTree = "<group>"; };
+		CEC8484D2EF93CBA000FF9F5 /* SubjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectController.swift; sourceTree = SOURCE_ROOT; };
+		CEC8484F2EF947D7000FF9F5 /* LessonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonManager.swift; sourceTree = "<group>"; };
+		CEC848512EF949CB000FF9F5 /* AddLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLesson.swift; sourceTree = "<group>"; };
+		CEC848532EF94AB5000FF9F5 /* EditLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLesson.swift; sourceTree = "<group>"; };
+		CEC848552EF94BAE000FF9F5 /* ClassManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassManager.swift; sourceTree = "<group>"; };
 		CED05B742EF850A200116AE0 /* SubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
 		CEEAD80F2EF0855200CC6191 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		CEF5E2842EF13B1500EAA862 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		CEF5E2862EF13B8300EAA862 /* EditQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuestionView.swift; sourceTree = "<group>"; };
+		CEF5E2882EF13BD900EAA862 /* AddQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +170,8 @@
 				CEF5E2842EF13B1500EAA862 /* Question.swift */,
 				CE17F33B2EF80119003B7B2A /* UserProfile.swift */,
 				CED05B742EF850A200116AE0 /* SubjectModel.swift */,
+				CE51158D2EF9A1DF00588471 /* GradeModel.swift */,
+				CE5115912EF9AA7200588471 /* LessonModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -164,16 +188,21 @@
 				CE0A58222EF1CC1A00CE2BEB /* SelectGradeView.swift */,
 				CE0B6F8B2EEF1A700094B38A /* HomeView.swift */,
 				CE9960E42EF03567005F681B /* ProfileView.swift */,
-				CE9960E62EF03A97005F681B /* SubjectDetailView.swift */,
 				CE17F3372EF728D3003B7B2A /* QuestionListView.swift */,
 				CE17F32E2EF70F4F003B7B2A /* ConfirmationModal.swift */,
 				CE17F32C2EF70F4F003B7B2A /* ConfirmDeleteView.swift */,
+				CE9960E62EF03A97005F681B /* SubjectDetailView.swift */,
 				CE17F32B2EF70F4F003B7B2A /* ManagerView.swift */,
 				CE17F32D2EF70F4F003B7B2A /* QuizQuestionView.swift */,
 				CE17F32A2EF70F4F003B7B2A /* ResultScreen.swift */,
 				CE17F32F2EF70F4F003B7B2A /* SuccessToast.swift */,
 				CE17F3292EF70F4F003B7B2A /* UserListView.swift */,
 				CE9960E82EF03ECE005F681B /* QuizTimeSettingsView.swift */,
+				CEC8484F2EF947D7000FF9F5 /* LessonManager.swift */,
+				CEC848512EF949CB000FF9F5 /* AddLesson.swift */,
+				CEC848532EF94AB5000FF9F5 /* EditLesson.swift */,
+				CEC848552EF94BAE000FF9F5 /* ClassManager.swift */,
+				CE5115972EF9D8C700588471 /* SubjectManager.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -182,6 +211,10 @@
 			isa = PBXGroup;
 			children = (
 				CE17F33D2EF80338003B7B2A /* AuthController.swift */,
+				CEC8484D2EF93CBA000FF9F5 /* SubjectController.swift */,
+				CE51158F2EF9A21200588471 /* GradeController.swift */,
+				CE5115932EF9AAB600588471 /* LessonController.swift */,
+				CE5115952EF9CA1C00588471 /* QuestionController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -284,15 +317,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC848542EF94AB5000FF9F5 /* EditLesson.swift in Sources */,
+				CEC8484E2EF93CBA000FF9F5 /* SubjectController.swift in Sources */,
 				CEF5E2852EF13B1500EAA862 /* Question.swift in Sources */,
 				CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */,
 				CEF5E2872EF13B8400EAA862 /* EditQuestionView.swift in Sources */,
 				CEF5E2892EF13BDA00EAA862 /* AddQuestionView.swift in Sources */,
 				CE17F3282EF70EDA003B7B2A /* QuestionRow.swift in Sources */,
+				CE5115902EF9A21200588471 /* GradeController.swift in Sources */,
 				CE17F3312EF70F50003B7B2A /* ResultScreen.swift in Sources */,
+				CE5115922EF9AA7200588471 /* LessonModel.swift in Sources */,
+				CEC848522EF949CB000FF9F5 /* AddLesson.swift in Sources */,
 				CE17F3322EF70F50003B7B2A /* ManagerView.swift in Sources */,
 				CE6E096C2EF04AB7002FFBD6 /* LoginView.swift in Sources */,
 				CEEAD8102EF0855200CC6191 /* RegisterView.swift in Sources */,
+				CE5115962EF9CA1D00588471 /* QuestionController.swift in Sources */,
+				CEC848562EF94BAE000FF9F5 /* ClassManager.swift in Sources */,
+				CE5115942EF9AAB600588471 /* LessonController.swift in Sources */,
 				CE9960E52EF03568005F681B /* ProfileView.swift in Sources */,
 				CED05B752EF850A200116AE0 /* SubjectModel.swift in Sources */,
 				CE17F33C2EF80119003B7B2A /* UserProfile.swift in Sources */,
@@ -306,10 +347,13 @@
 				CE17F3362EF70F50003B7B2A /* SuccessToast.swift in Sources */,
 				CE17F3262EF70EDA003B7B2A /* StatCard.swift in Sources */,
 				CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */,
+				CE51158E2EF9A1DF00588471 /* GradeModel.swift in Sources */,
 				CE17F3382EF728D3003B7B2A /* QuestionListView.swift in Sources */,
 				CE0A58232EF1CC1A00CE2BEB /* SelectGradeView.swift in Sources */,
 				CE17F33A2EF800EB003B7B2A /* MyDatabase.swift in Sources */,
+				CE5115982EF9D8C700588471 /* SubjectManager.swift in Sources */,
 				CE0A58252EF1CC6500CE2BEB /* GradeRow.swift in Sources */,
+				CEC848502EF947D7000FF9F5 /* LessonManager.swift in Sources */,
 				CE22873B2EF842490093DD57 /* HomeView.swift in Sources */,
 				CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */,
 				CE9960E92EF03ECF005F681B /* QuizTimeSettingsView.swift in Sources */,

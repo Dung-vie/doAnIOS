@@ -18,7 +18,7 @@ struct appHocTapApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                HomeView()
+                ManagerView()
             }
         }
     }

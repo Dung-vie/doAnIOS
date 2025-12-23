@@ -36,11 +36,6 @@ struct GradeRow: View {
                         .foregroundColor(iconColor)
 
                     Spacer()
-
-                    // Arrow
-                    Image(systemName: "chevron.right")
-                        .font(.system(size: 18, weight: .bold))
-                        .foregroundColor(iconColor)
                 }
                 .padding()
                 .frame(maxWidth: .infinity, minHeight: 72)

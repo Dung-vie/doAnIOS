@@ -2,12 +2,21 @@
 //  ResultScreen.swift
 //  appHocTap
 //
-//  Created by  User on 16.12.2025.
+//  Created by User on 16.12.2025.
 //
 
 import SwiftUI
 
 struct ResultScreen: View {
+    // --- 1. BIẾN NHẬN DỮ LIỆU TỪ BÊN NGOÀI ---
+    var score: Int                  // Số câu đúng (VD: 7)
+    var totalQuestions: Int         // Tổng số câu (VD: 10)
+    var wrongAnswers: [String]      // Danh sách các câu sai (để lưu lại)
+    
+    // Biến môi trường để đóng màn hình (quay về trang trước)
+    @Environment(\.presentationMode) var presentationMode
+
+    // Màu sắc giao diện
     let primaryGreen = Color(red: 0.0, green: 0.85, blue: 0.45)
     let primaryRed = Color(red: 1.0, green: 0.4, blue: 0.4)
 
@@ -23,6 +32,18 @@ struct ResultScreen: View {
 
                 HStack {
                     Button(action: onHome) {
+            // Nền tổng thể
+            Color.white
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(spacing: 0) {
+                
+                // --- HEADER ---
+                HStack {
+                    Button(action: {
+                        // Đóng màn hình khi bấm X
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
                         Image(systemName: "xmark")
                             .font(.system(size: 20))
                             .foregroundColor(.black)
@@ -54,6 +75,18 @@ struct ResultScreen: View {
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }
+                
+                // --- 2. ĐIỂM SỐ (HIỂN THỊ DỮ LIỆU THẬT) ---
+                VStack(spacing: 8) {
+                    // Hiển thị điểm số dựa trên biến score và totalQuestions
+                    Text("Bạn đúng \(score)/\(totalQuestions) câu")
+                        .font(.system(size: 28, weight: .heavy))
+                        .foregroundColor(.black)
+                    
+                    // Logic hiển thị lời khen (Trên 50% thì khen, dưới thì động viên)
+                    Text(Double(score) / Double(totalQuestions) >= 0.5 ? "Làm tốt lắm!" : "Cố gắng lần sau nhé!")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
                 }
                 .padding(.vertical, 20)
 
@@ -75,6 +108,37 @@ struct ResultScreen: View {
                                     primaryRed: primaryRed
                                 )
                             }
+                        
+                        // LƯU Ý CHO NHÓM:
+                        // Phần hiển thị chi tiết từng câu hỏi dưới đây đang là DỮ LIỆU MẪU (Hardcode).
+                        // Để hiển thị đúng bài vừa làm, bạn Dung cần truyền danh sách câu hỏi vào đây
+                        // và dùng vòng lặp ForEach.
+                        VStack(spacing: 12) {
+                            
+                            AnswerRow(
+                                title: "Câu 1: Thủ đô của Việt...",
+                                userChoice: "Hà Nội",
+                                isCorrect: true,
+                                primaryGreen: primaryGreen,
+                                primaryRed: primaryRed
+                            )
+                            
+                            AnswerRow(
+                                title: "Câu 2: Đâu là hành tinh lớn...",
+                                userChoice: "Trái Đất",
+                                correctChoice: "Sao Mộc",
+                                isCorrect: false,
+                                primaryGreen: primaryGreen,
+                                primaryRed: primaryRed
+                            )
+                            
+                            AnswerRow(
+                                title: "Câu 3: 2 + 2 bằng mấy?",
+                                userChoice: "4",
+                                isCorrect: true,
+                                primaryGreen: primaryGreen,
+                                primaryRed: primaryRed
+                            )
                         }
                         .padding(.horizontal)
                     }
@@ -83,6 +147,11 @@ struct ResultScreen: View {
 
                 VStack(spacing: 12) {
                     Button(action: onRestart) {
+                    // Nút Làm lại
+                    Button(action: {
+                        // Logic làm lại bài (Reset game) sẽ do bạn Dung xử lý
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
                         Text("Làm lại")
                             .font(.headline)
                             .fontWeight(.bold)
@@ -94,6 +163,12 @@ struct ResultScreen: View {
                     }
 
                     Button(action: onHome) {
+                    
+                    // Nút Về Home
+                    Button(action: {
+                        // Đóng màn hình kết quả để về trang trước
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
                         Text("Về Home")
                             .font(.headline)
                             .fontWeight(.bold)
@@ -107,9 +182,25 @@ struct ResultScreen: View {
                 .padding(20)
             }
         }
+        // --- 5. QUAN TRỌNG: TỰ ĐỘNG LƯU KẾT QUẢ ---
+        // Khi màn hình hiện ra (.onAppear), gọi Manager để lưu xuống máy ngay lập tức
+        .onAppear {
+            MyDatabase.shared.saveQuizResult(
+        score: score,
+        total: totalQuestions,
+        wrongAnswers: [] // Truyền list câu sai của bạn vào đây
+    ) { success in
+        if success {
+            print("✅ Đã lưu lên Firebase")
+        } else {
+            print("❌ Lưu thất bại")
+        }
+    }
+        }
     }
 }
 
+// --- COMPONENT CON: Dòng hiển thị đáp án (Giữ nguyên) ---
 struct AnswerRow: View {
     let title: String
     let userChoice: String
@@ -120,6 +211,7 @@ struct AnswerRow: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
+            // 1. Icon Trạng thái
             ZStack {
                 Circle()
                     .fill(isCorrect ? primaryGreen.opacity(0.15) : primaryRed.opacity(0.15))
@@ -138,7 +230,7 @@ struct AnswerRow: View {
                 Text("Bạn đã chọn: \(userChoice)")
                     .font(.system(size: 13))
                     .foregroundColor(.gray)
-
+                
                 if !isCorrect, let correct = correctChoice {
                     Text("Đáp án đúng: \(correct)")
                         .font(.system(size: 13, weight: .semibold))
@@ -147,7 +239,8 @@ struct AnswerRow: View {
             }
 
             Spacer()
-
+            
+            // 3. Chữ Đúng/Sai
             Text(isCorrect ? "Đúng" : "Sai")
                 .font(.system(size: 14, weight: .bold))
                 .foregroundColor(isCorrect ? primaryGreen : primaryRed)

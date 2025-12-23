@@ -29,6 +29,27 @@ struct HomeView: View {
                             .foregroundColor(.green)
                             .font(.title2)
                         Spacer()
+                        
+                        // --- 2. Nút Lịch sử làm bài (MỚI THÊM VÀO) ---
+                        NavigationLink(destination: HistoryView()) {
+                            Image(systemName: "clock.arrow.circlepath") // Icon đồng hồ lịch sử
+                                .foregroundColor(.black)
+                                .font(.title2)
+                        }
+                        NavigationLink(destination: StatisticsView()) {
+                            Image(systemName: "chart.bar.xaxis") // Icon biểu đồ
+                                .foregroundColor(.black)
+                                .font(.title2)
+                            }
+                        // Nút thêm câu hỏi mới
+                            NavigationLink(destination: UserCreateQuestionView()) {
+                                Image(systemName: "plus.circle.fill")
+                                    .foregroundColor(.black)
+                                    .font(.title2)
+                            }
+                            .padding(.trailing, 10)
+
+
                         NavigationLink(destination: ProfileView()) {
                             Image(systemName: "person.fill")
                                 .foregroundColor(.black)

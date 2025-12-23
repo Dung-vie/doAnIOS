@@ -30,6 +30,7 @@
 		CE5115942EF9AAB600588471 /* LessonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5115932EF9AAB600588471 /* LessonController.swift */; };
 		CE5115962EF9CA1D00588471 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5115952EF9CA1C00588471 /* QuestionController.swift */; };
 		CE5115982EF9D8C700588471 /* SubjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5115972EF9D8C700588471 /* SubjectManager.swift */; };
+		CE3B38CC2EF9B279004FFCF3 /* UserCreateQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B38CB2EF9B279004FFCF3 /* UserCreateQuestionView.swift */; };
 		CE6E096C2EF04AB7002FFBD6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E096B2EF04AB5002FFBD6 /* LoginView.swift */; };
 		CE8560C12EF8FE7300032CF2 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = CE8560C02EF8FE7300032CF2 /* FirebaseAnalyticsSwift-Beta */; };
 		CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC3642EECA3CE00E975F7 /* appHocTapApp.swift */; };
@@ -84,6 +85,7 @@
 		CE5115932EF9AAB600588471 /* LessonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LessonController.swift; path = appHocTap/LessonController.swift; sourceTree = SOURCE_ROOT; };
 		CE5115952EF9CA1C00588471 /* QuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionController.swift; path = appHocTap/QuestionController.swift; sourceTree = SOURCE_ROOT; };
 		CE5115972EF9D8C700588471 /* SubjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectManager.swift; sourceTree = "<group>"; };
+		CE3B38CB2EF9B279004FFCF3 /* UserCreateQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreateQuestionView.swift; sourceTree = "<group>"; };
 		CE6E096B2EF04AB5002FFBD6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CE8AC3612EECA3CE00E975F7 /* appHocTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appHocTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8AC3642EECA3CE00E975F7 /* appHocTapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appHocTapApp.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				CEC848552EF94BAE000FF9F5 /* ClassManager.swift */,
 				CE5115972EF9D8C700588471 /* SubjectManager.swift */,
 				CEE3823A2EF9DD5E00F43589 /* LessonRowModel.swift */,
+				CE3B38CB2EF9B279004FFCF3 /* UserCreateQuestionView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				CE5115942EF9AAB600588471 /* LessonController.swift in Sources */,
 				CE9960E52EF03568005F681B /* ProfileView.swift in Sources */,
 				CED05B752EF850A200116AE0 /* SubjectModel.swift in Sources */,
+				CE3B38CC2EF9B279004FFCF3 /* UserCreateQuestionView.swift in Sources */,
 				CE17F33C2EF80119003B7B2A /* UserProfile.swift in Sources */,
 				CE0B6F8C2EEF1A700094B38A /* HomeView.swift in Sources */,
 				CEE3823B2EF9DD5E00F43589 /* LessonRowModel.swift in Sources */,

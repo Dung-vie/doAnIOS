@@ -2,19 +2,22 @@
 //  ProfileView.swift
 //  appHocTap
 //
-//  Created by  User on 15.12.2025.
+//  Created by User on 15.12.2025.
 //
 
 import SwiftUI
+import Firebase // Import thêm cái này để dùng Auth
 
 struct ProfileView: View {
 
     @Environment(\.dismiss) private var dismiss
 
-    // Demo data (sau này bạn nối từ ViewModel / API / UserDefaults)
-    private let childName: String = "Tên của bé"
-    private let practiceCount: Int = 12
+    // --- CÁC BIẾN MỚI ĐỂ LẤY DỮ LIỆU FIREBASE ---
+    @State private var email: String = "Đang tải..."
+    @State private var totalGames: Int = 0
+    @State private var isLoading = true
 
+    // Demo data cho list bài học (Giữ nguyên hoặc sau này thay bằng Firebase luôn nếu muốn)
     private let lessons: [LessonItem] = [
         .init(title: "Bài 1: Bảng Chữ Cái", detail: "8/10 câu", status: .done),
         .init(title: "Bài 2: Các con số", detail: "Điểm tuyệt đối!", status: .perfect),
@@ -57,7 +60,6 @@ struct ProfileView: View {
                             .frame(width: 120, height: 120)
                             .shadow(color: .black.opacity(0.08), radius: 10, x: 0, y: 6)
 
-                        // Nếu bạn có ảnh asset: thay bằng Image("avatar").resizable()...
                         Image(systemName: "person.crop.circle.fill")
                             .resizable()
                             .scaledToFit()
@@ -66,18 +68,72 @@ struct ProfileView: View {
                             .clipShape(Circle())
                     }
 
-                    Text(childName)
-                        .font(.system(size: 28, weight: .bold))
+                    // HIỂN THỊ EMAIL TỪ FIREBASE
+                    Text(email)
+                        .font(.system(size: 20, weight: .bold)) // Giảm size chút nếu email dài
                         .foregroundColor(.black)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5) // Tự thu nhỏ nếu tên quá dài
+                        .padding(.horizontal)
                 }
                 .padding(.top, 8)
 
-                // Practice card
-                ProfileStatCard(title: "Số Lần Luyện Tập", value: "\(practiceCount)")
+                // --- THẺ THỐNG KÊ (ĐÃ SỬA) ---
+                // Thay số cứng bằng biến totalGames
+                if isLoading {
+                    // Hiện loading khi chưa tải xong
+                    VStack {
+                        ProgressView()
+                            .padding()
+                        Text("Đang tải số liệu...")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 22)
+                    .background(Color.white)
+                    .cornerRadius(22)
+                    .shadow(radius: 5)
+                    .padding(.horizontal, 16)
+                    
+                } else {
+                    ProfileStatCard(title: "Tổng Số Bài Đã Làm", value: "\(totalGames)")
+                }
+                
+                // --- NÚT DẪN ĐẾN TRANG CHI TIẾT ---
+                // Thêm 2 nút để dẫn sang trang Thống kê & Lịch sử
+                HStack(spacing: 15) {
+                    NavigationLink(destination: StatisticsView()) {
+                        HStack {
+                            Image(systemName: "chart.bar.xaxis")
+                            Text("Thống kê")
+                        }
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.orange)
+                        .cornerRadius(15)
+                    }
+                    
+                    NavigationLink(destination: HistoryView()) {
+                        HStack {
+                            Image(systemName: "clock")
+                            Text("Lịch sử")
+                        }
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(15)
+                    }
+                }
+                .padding(.horizontal, 16)
 
-                // Section: lessons
+                // Section: lessons (Giữ nguyên demo data của bạn)
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Các Bài Đã Học")
+                    Text("Các Bài Đã Học (Demo)")
                         .font(.system(size: 22, weight: .bold))
                         .padding(.horizontal, 16)
                         .padding(.top, 6)
@@ -86,7 +142,6 @@ struct ProfileView: View {
                         ForEach(lessons) { item in
                             LessonRow(item: item) {
                                 // TODO: handle retry
-                                // print("Retry \(item.title)")
                             }
                         }
                     }
@@ -95,8 +150,8 @@ struct ProfileView: View {
 
                 // Logout
                 Button {
-                    // TODO: handle logout
-                    // Ví dụ: clear user session, navigate to login, etc.
+                    try? Auth.auth().signOut()
+                    // Cần xử lý logic chuyển màn hình về Login tại đây (hoặc ở RootView)
                 } label: {
                     HStack(spacing: 10) {
                         Image(systemName: "rectangle.portrait.and.arrow.right")
@@ -118,12 +173,31 @@ struct ProfileView: View {
             .padding(.bottom, 24)
         }
         .background(Color(white: 0.96).ignoresSafeArea())
-        .navigationBarHidden(true) // vì mình custom header
+        .navigationBarHidden(true)
+        // --- GỌI FIREBASE KHI MÀN HÌNH HIỆN LÊN ---
+        .onAppear {
+            fetchProfileData()
+        }
+    }
+    
+    // --- HÀM LOGIC TẢI DỮ LIỆU ---
+    func fetchProfileData() {
+        // 1. Lấy email
+        if let user = Auth.auth().currentUser {
+            self.email = user.email ?? "No Email"
+        } else {
+            self.email = "Khách"
+        }
+        
+        // 2. Lấy số lượng bài làm
+        MyDatabase.shared.getHistory { historyList in
+            self.totalGames = historyList.count
+            self.isLoading = false
+        }
     }
 }
 
-// MARK: - Models
-
+// MARK: - Models (Giữ nguyên)
 struct LessonItem: Identifiable {
     enum Status {
         case done
@@ -136,8 +210,7 @@ struct LessonItem: Identifiable {
     let status: Status
 }
 
-// MARK: - Components
-
+// MARK: - Components (Giữ nguyên)
 private struct ProfileStatCard: View {
     let title: String
     let value: String
@@ -171,7 +244,6 @@ private struct LessonRow: View {
 
     var body: some View {
         HStack(spacing: 14) {
-            // Left status icon
             ZStack {
                 Circle()
                     .fill(Color.green.opacity(0.18))
@@ -182,7 +254,6 @@ private struct LessonRow: View {
                     .font(.title3.weight(.bold))
             }
 
-            // Title + detail
             VStack(alignment: .leading, spacing: 4) {
                 Text(item.title)
                     .font(.system(size: 17, weight: .semibold))
@@ -201,7 +272,6 @@ private struct LessonRow: View {
 
             Spacer()
 
-            // Retry button
             Button(action: onRetry) {
                 ZStack {
                     Circle()

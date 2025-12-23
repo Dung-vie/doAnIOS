@@ -10,4 +10,7 @@ struct UserProfile: Codable {
     var uid: String
     var fullName: String
     var email: String
+    var grade: Int
+    var role: Int
 }
+

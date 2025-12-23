@@ -8,85 +8,99 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @State private var fullName: String = ""
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @State private var fullName = ""
+    @State private var email = ""
+    @State private var password = ""
+    @State private var grade = 0
+    @State private var message = ""
+    @State private var isError = false
+    
     let controller = AuthController()
-     @State private var message: String = ""
-
     
     var body: some View {
         VStack(spacing: 24) {
-
             Spacer().frame(height: 40)
-
-            // MARK: - Title
+            
+            // Title
             VStack(spacing: 8) {
                 Text("Tạo tài khoản")
                     .font(.system(size: 28, weight: .bold))
-
                 Text("Bắt đầu hành trình học tập của bạn!")
                     .font(.system(size: 16))
                     .foregroundColor(.gray)
             }
-
+            
             Spacer().frame(height: 20)
-
-            // MARK: - Form
+            
+            // Form
             VStack(alignment: .leading, spacing: 16) {
-
                 // Họ và tên
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Họ và tên")
-                        .font(.system(size: 14, weight: .medium))
-
-                    TextField("Nhập họ và tên của bạn", text: $fullName)
+                    TextField("Nhập họ và tên", text: $fullName)
                         .padding()
                         .background(Color(.systemGray6))
                         .cornerRadius(14)
                 }
-
+                
                 // Email
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Email")
-                        .font(.system(size: 14, weight: .medium))
-
-                    TextField("Nhập email của bạn", text: $email)
+                    TextField("Nhập email", text: $email)
                         .keyboardType(.emailAddress)
-                        .autocapitalization(.none)
+                        .textInputAutocapitalization(.never)
                         .padding()
                         .background(Color(.systemGray6))
                         .cornerRadius(14)
                 }
-
+                
                 // Mật khẩu
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Mật khẩu")
-                        .font(.system(size: 14, weight: .medium))
-
-                    SecureField("Nhập mật khẩu của bạn", text: $password)
+                    SecureField("Nhập mật khẩu", text: $password)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(14)
+                }
+                
+                // Grade (có thể thay bằng Picker sau)
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("Lớp")
+                    TextField("Nhập lớp (ví dụ: 10)", value: $grade, format: .number)
+                        .keyboardType(.numberPad)
                         .padding()
                         .background(Color(.systemGray6))
                         .cornerRadius(14)
                 }
             }
-
+            
             Spacer().frame(height: 24)
-
-            // MARK: - Register Button
-            Button(action: {
+            
+            // Register Button
+            Button {
+                if fullName.isEmpty || email.isEmpty || password.isEmpty {
+                    message = "Vui lòng điền đầy đủ thông tin"
+                    isError = true
+                    return
+                }
+                
                 controller.register(
                     fullName: fullName,
                     email: email,
-                    password: password
+                    password: password,
+                    grade: grade
                 ) { err in
-                    if let err = err {
-                        message = " \(err)"
-                    } else {
-                        message = " Đăng ký thành công!"
+                    DispatchQueue.main.async {
+                        if let err = err {
+                            message = err
+                            isError = true
+                        } else {
+                            message = "Đăng ký thành công! Vui lòng đăng nhập."
+                            isError = false
+                        }
                     }
                 }
-            }) {
+            } label: {
                 Text("Đăng ký")
                     .frame(maxWidth: .infinity)
                     .padding()
@@ -94,28 +108,24 @@ struct RegisterView: View {
                     .foregroundColor(.white)
                     .cornerRadius(14)
             }
-
+            
             Text(message)
-                .foregroundColor(.blue)
-
-
-
-            // MARK: - Login Link
+                .foregroundColor(isError ? .red : .green)
+            
+            // Login link
             HStack(spacing: 4) {
                 Text("Đã có tài khoản?")
                     .foregroundColor(.gray)
-
                 NavigationLink {
-                    LoginView() 
+                    LoginView()
                 } label: {
                     Text("Đăng nhập")
                         .fontWeight(.bold)
                         .foregroundColor(.green)
-                        .navigationBarHidden(true)
                 }
             }
             .font(.system(size: 14))
-
+            
             Spacer()
         }
         .padding(.horizontal, 24)

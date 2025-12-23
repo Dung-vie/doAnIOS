@@ -82,7 +82,7 @@ struct LoginView: View {
 
             // MARK: - Login Button
             NavigationLink{
-                SelectGradeView()
+                HomeView()
             } label: {
                 Text("Đăng nhập")
                     .font(.system(size: 18, weight: .bold))

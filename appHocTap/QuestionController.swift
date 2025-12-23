@@ -13,6 +13,15 @@ class QuestionController {
     
     private init() {}
     
+    // Lấy danh sách câu hỏi thuộc về một bài học cụ thể
+    func fetchQuestions(forLessonId lessonId: String, completion: @escaping ([Question]) -> Void) {
+        // Lấy tất cả câu hỏi về rồi lọc (hoặc query trực tiếp nếu cấu trúc Firebase cho phép)
+        fetchQuestions { allQuestions in
+            let filtered = allQuestions.filter { $0.lessonId == lessonId }
+            completion(filtered)
+        }
+    }
+    
     // Ham update cau hoi
     func updateQuestion(_ question: Question, completion: @escaping (Bool) -> Void) {
             // Dùng lại hàm addQuestion của Database (vì nó ghi đè theo ID)

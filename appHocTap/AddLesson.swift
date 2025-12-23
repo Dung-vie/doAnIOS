@@ -9,24 +9,43 @@ struct AddLesson: View {
 
     @Environment(\.dismiss) private var dismiss
 
-    // Các biến nhập liệu
+    // --- Các biến nhập liệu ---
     @State private var lessonName = ""
     @State private var description = ""
-    @State private var iconName = ""
-    @State private var iconColor = ""
+    
+    // Mặc định chọn icon đầu tiên và màu đầu tiên để không bị rỗng
+    @State private var iconName = "book.fill"
+    @State private var iconColor = "#3B82F6" // Màu xanh dương mặc định
 
-    // Biến lưu lựa chọn hiện tại
     @State private var selectedSubject = ""
     @State private var selectedGrade = ""
     
-    // Biến dữ liệu
     @State private var subjectList: [SubjectModel] = []
     @State private var gradeList: [GradeModel] = []
 
-    // --- 1. THÊM BIẾN ALERT ---
     @State private var showAlert = false
     @State private var alertMessage = ""
-    // --------------------------
+    
+    // --- DANH SÁCH DỮ LIỆU MẪU ĐỂ CHỌN ---
+    let sampleIcons = [
+        "book.fill", "book.closed.fill", "text.book.closed.fill",
+        "pencil", "pencil.and.ruler.fill", "graduationcap.fill",
+        "doc.text.fill", "note.text", "calendar",
+        "globe", "flask.fill", "function", "calculator",
+        "star.fill", "heart.fill", "lightbulb.fill"
+    ]
+    
+    let sampleColors = [
+        "#EF4444", // Đỏ
+        "#F97316", // Cam
+        "#F59E0B", // Vàng
+        "#10B981", // Xanh lá
+        "#3B82F6", // Xanh dương
+        "#6366F1", // Chàm
+        "#8B5CF6", // Tím
+        "#EC4899", // Hồng
+        "#6B7280"  // Xám
+    ]
 
     var body: some View {
         NavigationStack {
@@ -34,6 +53,12 @@ struct AddLesson: View {
                 VStack(alignment: .leading, spacing: 22) {
                     header
                     infoSection
+                    
+                    // --- Phần chọn Icon và Màu mới ---
+                    iconSelector
+                    colorSelector
+                    // --------------------------------
+                    
                     saveButton
                     cancelButton
                 }
@@ -45,7 +70,6 @@ struct AddLesson: View {
             .onAppear {
                 loadRealData()
             }
-            // --- 2. THÊM MODIFIER ALERT ---
             .alert("Thông báo", isPresented: $showAlert) {
                 Button("Đóng", role: .cancel) { }
             } message: {
@@ -69,7 +93,6 @@ struct AddLesson: View {
 // MARK: - UI Components
 extension AddLesson {
     
-    // (Header giữ nguyên)
     private var header: some View {
         HStack {
             Button { dismiss() } label: {
@@ -85,7 +108,6 @@ extension AddLesson {
         .padding(.top, 8)
     }
 
-    // (InfoSection giữ nguyên như code cũ của bạn)
     private var infoSection: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Thông tin bài học").font(.system(size: 24, weight: .bold))
@@ -99,14 +121,78 @@ extension AddLesson {
             dropdownField(title: "Lớp", placeholder: "Chọn khối lớp", selection: $selectedGrade, options: gradeList.map { $0.name })
 
             multiLineField(title: "Mô tả bài học", placeholder: "Nhập mô tả...", text: $description)
-
-            inputField(title: "Tên Icon", placeholder: "Ví dụ: book.fill", text: $iconName)
+        }
+    }
+    
+    // --- UI CHỌN ICON ---
+    private var iconSelector: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Chọn Icon")
+                .font(.system(size: 16, weight: .bold))
             
-            inputField(title: "Mã màu Icon", placeholder: "Ví dụ: #13ec5b", text: $iconColor)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    ForEach(sampleIcons, id: \.self) { icon in
+                        Button {
+                            iconName = icon
+                        } label: {
+                            Image(systemName: icon)
+                                .font(.system(size: 24))
+                                .frame(width: 50, height: 50)
+                                // Nếu được chọn thì đổi màu nền và màu icon
+                                .background(iconName == icon ? Color.green : Color.white)
+                                .foregroundColor(iconName == icon ? .white : .gray)
+                                .clipShape(RoundedRectangle(cornerRadius: 12))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(Color.green.opacity(0.3), lineWidth: 1)
+                                )
+                        }
+                    }
+                }
+                .padding(.vertical, 4)
+            }
+        }
+    }
+    
+    // --- UI CHỌN MÀU ---
+    private var colorSelector: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Chọn Màu sắc")
+                .font(.system(size: 16, weight: .bold))
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    ForEach(sampleColors, id: \.self) { colorHex in
+                        Button {
+                            iconColor = colorHex
+                        } label: {
+                            ZStack {
+                                Circle()
+                                    .fill(Color(hex: colorHex)) // Dùng extension Color(hex:)
+                                    .frame(width: 44, height: 44)
+                                
+                                // Nếu được chọn thì hiện dấu tích
+                                if iconColor == colorHex {
+                                    Image(systemName: "checkmark")
+                                        .font(.system(size: 18, weight: .bold))
+                                        .foregroundColor(.white)
+                                }
+                            }
+                            .padding(2)
+                            // Viền ngoài khi được chọn
+                            .overlay(
+                                Circle()
+                                    .stroke(iconColor == colorHex ? Color(hex: colorHex) : Color.clear, lineWidth: 2)
+                            )
+                        }
+                    }
+                }
+                .padding(.vertical, 4)
+            }
         }
     }
 
-    // --- 3. SỬA NÚT LƯU ---
     private var saveButton: some View {
         Button {
             saveLessonAction()
@@ -122,39 +208,33 @@ extension AddLesson {
         .padding(.top, 10)
     }
     
-    // --- 4. HÀM XỬ LÝ LƯU (Logic Validate) ---
     private func saveLessonAction() {
-        // Validate: Kiểm tra xem có trường nào bị bỏ trống không
-        if lessonName.isEmpty || selectedSubject.isEmpty || selectedGrade.isEmpty || description.isEmpty || iconName.isEmpty || iconColor.isEmpty {
-            
-            alertMessage = "Vui lòng nhập đầy đủ tất cả các trường thông tin!"
+        // Validate
+        if lessonName.isEmpty || selectedSubject.isEmpty || selectedGrade.isEmpty || description.isEmpty {
+            alertMessage = "Vui lòng nhập đầy đủ tên, môn, lớp và mô tả!"
             showAlert = true
             return
         }
         
-        // Gọi Controller để lưu
+        // Gọi Controller
         LessonController.shared.addNewLesson(
             name: lessonName,
             description: description,
             subject: selectedSubject,
             grade: selectedGrade,
-            iconName: iconName,
-            iconColor: iconColor
+            iconName: iconName,   // Lấy từ biến @State đã chọn
+            iconColor: iconColor  // Lấy từ biến @State đã chọn
         ) { success, errorMsg in
-            
             if success {
-                // Lưu thành công -> Đóng màn hình
                 print("Lưu thành công!")
                 dismiss()
             } else {
-                // Lưu thất bại -> Hiện lỗi
                 alertMessage = "Lỗi khi lưu: \(errorMsg ?? "Không xác định")"
                 showAlert = true
             }
         }
     }
 
-    // (CancelButton giữ nguyên)
     private var cancelButton: some View {
         Button { dismiss() } label: {
             Text("Hủy Bỏ")
@@ -166,7 +246,7 @@ extension AddLesson {
     }
 }
 
-// (Phần Custom Fields giữ nguyên như code cũ)
+// MARK: - Custom Fields
 extension AddLesson {
     private func inputField(title: String, placeholder: String, text: Binding<String>) -> some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -219,3 +299,33 @@ extension AddLesson {
         }
     }
 }
+
+// Bạn cần đảm bảo đã có extension này trong dự án (nếu chưa có thì thêm vào cuối file)
+/*
+extension Color {
+    init(hex: String) {
+        let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        var int: UInt64 = 0
+        Scanner(string: hex).scanHexInt64(&int)
+        let a, r, g, b: UInt64
+        switch hex.count {
+        case 3: // RGB (12-bit)
+            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
+        case 6: // RGB (24-bit)
+            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
+        case 8: // ARGB (32-bit)
+            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
+        default:
+            (a, r, g, b) = (255, 1, 1, 0)
+        }
+
+        self.init(
+            .sRGB,
+            red: Double(r) / 255,
+            green: Double(g) / 255,
+            blue:  Double(b) / 255,
+            opacity: Double(a) / 255
+        )
+    }
+}
+*/

@@ -26,7 +26,21 @@ struct QuizQuestionScreen: View {
 
     // Màu xanh chủ đạo
     let primaryGreen = Color(red: 0.0, green: 0.85, blue: 0.45)
-    
+
+    @StateObject private var vm: QuizController
+    @State private var showResult = false
+
+    init(bankKey: String, lessonId: String?, isUnlimited: Bool, minutes: Int) {
+         _vm = StateObject(
+             wrappedValue: QuizController(
+                 bankKey: bankKey,
+                 lessonId: lessonId,
+                 isUnlimited: isUnlimited,
+                 minutes: minutes
+             )
+         )
+     }
+
     var body: some View {
         ZStack {
             Color(UIColor.systemGray6).edgesIgnoringSafeArea(.all)
@@ -237,7 +251,6 @@ struct QuizQuestionScreen: View {
             showScoreAlert = true
         }
     }
-}
 
 // Component con: Một dòng đáp án (Có logic đổi màu)
 struct OptionRowReal: View {

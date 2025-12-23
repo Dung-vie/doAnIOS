@@ -31,6 +31,7 @@
 		CE5115962EF9CA1D00588471 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5115952EF9CA1C00588471 /* QuestionController.swift */; };
 		CE5115982EF9D8C700588471 /* SubjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5115972EF9D8C700588471 /* SubjectManager.swift */; };
 		CE6E096C2EF04AB7002FFBD6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E096B2EF04AB5002FFBD6 /* LoginView.swift */; };
+		CE8560C12EF8FE7300032CF2 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = CE8560C02EF8FE7300032CF2 /* FirebaseAnalyticsSwift-Beta */; };
 		CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC3642EECA3CE00E975F7 /* appHocTapApp.swift */; };
 		CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AC3662EECA3CE00E975F7 /* ContentView.swift */; };
 		CE8AC3692EECA3D400E975F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8AC3682EECA3D400E975F7 /* Assets.xcassets */; };
@@ -49,6 +50,10 @@
 		CEC848542EF94AB5000FF9F5 /* EditLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC848532EF94AB5000FF9F5 /* EditLesson.swift */; };
 		CEC848562EF94BAE000FF9F5 /* ClassManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC848552EF94BAE000FF9F5 /* ClassManager.swift */; };
 		CED05B752EF850A200116AE0 /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED05B742EF850A200116AE0 /* SubjectModel.swift */; };
+		CEE382352EF9C6FA00F43589 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE382342EF9C6FA00F43589 /* QuizQuestion.swift */; };
+		CEE382372EF9C72200F43589 /* QuizResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE382362EF9C72200F43589 /* QuizResult.swift */; };
+		CEE382392EF9C7A900F43589 /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE382382EF9C7A900F43589 /* QuizController.swift */; };
+		CEE3823B2EF9DD5E00F43589 /* LessonRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3823A2EF9DD5E00F43589 /* LessonRowModel.swift */; };
 		CEEAD8102EF0855200CC6191 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAD80F2EF0855200CC6191 /* RegisterView.swift */; };
 		CEF5E2852EF13B1500EAA862 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5E2842EF13B1500EAA862 /* Question.swift */; };
 		CEF5E2872EF13B8400EAA862 /* EditQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5E2862EF13B8300EAA862 /* EditQuestionView.swift */; };
@@ -95,6 +100,10 @@
 		CEC848532EF94AB5000FF9F5 /* EditLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLesson.swift; sourceTree = "<group>"; };
 		CEC848552EF94BAE000FF9F5 /* ClassManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassManager.swift; sourceTree = "<group>"; };
 		CED05B742EF850A200116AE0 /* SubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
+		CEE382342EF9C6FA00F43589 /* QuizQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
+		CEE382362EF9C72200F43589 /* QuizResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResult.swift; sourceTree = "<group>"; };
+		CEE382382EF9C7A900F43589 /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizController.swift; path = appHocTap/QuizController.swift; sourceTree = SOURCE_ROOT; };
+		CEE3823A2EF9DD5E00F43589 /* LessonRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRowModel.swift; sourceTree = "<group>"; };
 		CEEAD80F2EF0855200CC6191 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		CEF5E2842EF13B1500EAA862 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		CEF5E2862EF13B8300EAA862 /* EditQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuestionView.swift; sourceTree = "<group>"; };
@@ -106,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8560C12EF8FE7300032CF2 /* FirebaseAnalyticsSwift-Beta in Frameworks */,
 				CE8CB7F62EEE848100A3E4C4 /* FirebaseDatabase in Frameworks */,
 				CE8CB7F82EEE848100A3E4C4 /* FirebaseFirestore in Frameworks */,
 				CE8CB7F22EEE848100A3E4C4 /* FirebaseAnalytics in Frameworks */,
@@ -127,11 +137,19 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
+		CE8560BF2EF8FE7300032CF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE8AC3582EECA3CE00E975F7 = {
 			isa = PBXGroup;
 			children = (
 				CE8AC3632EECA3CE00E975F7 /* appHocTap */,
 				CE8AC3622EECA3CE00E975F7 /* Products */,
+				CE8560BF2EF8FE7300032CF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,6 +190,8 @@
 				CED05B742EF850A200116AE0 /* SubjectModel.swift */,
 				CE51158D2EF9A1DF00588471 /* GradeModel.swift */,
 				CE5115912EF9AA7200588471 /* LessonModel.swift */,
+				CEE382342EF9C6FA00F43589 /* QuizQuestion.swift */,
+				CEE382362EF9C72200F43589 /* QuizResult.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -203,6 +223,7 @@
 				CEC848532EF94AB5000FF9F5 /* EditLesson.swift */,
 				CEC848552EF94BAE000FF9F5 /* ClassManager.swift */,
 				CE5115972EF9D8C700588471 /* SubjectManager.swift */,
+				CEE3823A2EF9DD5E00F43589 /* LessonRowModel.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -215,6 +236,7 @@
 				CE51158F2EF9A21200588471 /* GradeController.swift */,
 				CE5115932EF9AAB600588471 /* LessonController.swift */,
 				CE5115952EF9CA1C00588471 /* QuestionController.swift */,
+				CEE382382EF9C7A900F43589 /* QuizController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,6 +280,7 @@
 				CE8CB7F32EEE848100A3E4C4 /* FirebaseAuth */,
 				CE8CB7F52EEE848100A3E4C4 /* FirebaseDatabase */,
 				CE8CB7F72EEE848100A3E4C4 /* FirebaseFirestore */,
+				CE8560C02EF8FE7300032CF2 /* FirebaseAnalyticsSwift-Beta */,
 			);
 			productName = appHocTap;
 			productReference = CE8AC3612EECA3CE00E975F7 /* appHocTap.app */;
@@ -337,11 +360,14 @@
 				CE9960E52EF03568005F681B /* ProfileView.swift in Sources */,
 				CED05B752EF850A200116AE0 /* SubjectModel.swift in Sources */,
 				CE17F33C2EF80119003B7B2A /* UserProfile.swift in Sources */,
+				CE0B6F8C2EEF1A700094B38A /* HomeView.swift in Sources */,
+				CEE3823B2EF9DD5E00F43589 /* LessonRowModel.swift in Sources */,
 				CE9960E72EF03A98005F681B /* SubjectDetailView.swift in Sources */,
 				CE17F3272EF70EDA003B7B2A /* AdminActionCard.swift in Sources */,
 				CE17F3332EF70F50003B7B2A /* ConfirmDeleteView.swift in Sources */,
 				CE17F3352EF70F50003B7B2A /* ConfirmationModal.swift in Sources */,
 				CE17F3302EF70F50003B7B2A /* UserListView.swift in Sources */,
+				CEE382372EF9C72200F43589 /* QuizResult.swift in Sources */,
 				CE17F33E2EF80338003B7B2A /* AuthController.swift in Sources */,
 				CE17F3342EF70F50003B7B2A /* QuizQuestionView.swift in Sources */,
 				CE17F3362EF70F50003B7B2A /* SuccessToast.swift in Sources */,
@@ -349,6 +375,7 @@
 				CE8AC3672EECA3CE00E975F7 /* ContentView.swift in Sources */,
 				CE51158E2EF9A1DF00588471 /* GradeModel.swift in Sources */,
 				CE17F3382EF728D3003B7B2A /* QuestionListView.swift in Sources */,
+				CEE382392EF9C7A900F43589 /* QuizController.swift in Sources */,
 				CE0A58232EF1CC1A00CE2BEB /* SelectGradeView.swift in Sources */,
 				CE17F33A2EF800EB003B7B2A /* MyDatabase.swift in Sources */,
 				CE5115982EF9D8C700588471 /* SubjectManager.swift in Sources */,
@@ -357,6 +384,7 @@
 				CE22873B2EF842490093DD57 /* HomeView.swift in Sources */,
 				CE8AC3652EECA3CE00E975F7 /* appHocTapApp.swift in Sources */,
 				CE9960E92EF03ECF005F681B /* QuizTimeSettingsView.swift in Sources */,
+				CEE382352EF9C6FA00F43589 /* QuizQuestion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +598,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CE8560C02EF8FE7300032CF2 /* FirebaseAnalyticsSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE8CB7F02EEE848100A3E4C4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAnalyticsSwift-Beta";
+		};
 		CE8CB7F12EEE848100A3E4C4 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE8CB7F02EEE848100A3E4C4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

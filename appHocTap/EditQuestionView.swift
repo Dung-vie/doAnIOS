@@ -43,17 +43,59 @@ struct EditQuestionView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
+            VStack(spacing: 16) {
                 headerView
                 
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 20) {
-                        
+                   
                         // Row 1: Môn & Lớp
-                        HStack(spacing: 12) {
-                            dropdownSection(title: "Môn học", placeholder: "Chọn môn", selection: $selectedSubject, options: subjectList.map { $0.name })
-                            dropdownSection(title: "Lớp học", placeholder: "Chọn lớp", selection: $selectedGrade, options: gradeList.map { $0.name })
+                        // Row 1: Môn trên – Lớp dưới
+                        VStack(alignment: .leading, spacing: 16) {
+                            
+                            
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text("Môn học")
+                                    .font(.system(size: 16, weight: .semibold))
+                                
+                                Menu {
+                                    ForEach(subjectList.map{$0.name}, id: \.self) { option in
+                                        Button(option) {
+                                            selectedSubject = option
+                                            selectedLessonId = ""
+                                            selectedLessonName = ""
+                                        }
+                                    }
+                                } label: {
+                                    HStack {
+                                        Text(selectedSubject.isEmpty ? "Chọn môn" : selectedSubject)
+                                            .font(.system(size: 15))
+                                            .foregroundColor(.black)
+                                            .lineLimit(1)
+                                        
+                                        Spacer()
+                                        Image(systemName: "chevron.down")
+                                            .font(.system(size: 12))
+                                            .foregroundColor(.gray)
+                                    }
+                                    .padding(.horizontal, 16)
+                                    .frame(height: 50)
+                                    .background(Color.white)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 0)      // ❗ Không bo góc
+                                            .stroke(Color.gray.opacity(0.2), lineWidth: 1)
+                                    )
+                                }
+                            
+                            
+                            // Lớp học (giữ như cũ – bo góc tròn)
+                            dropdownSection(
+                                title: "Lớp học",
+                                placeholder: "Chọn lớp",
+                                selection: $selectedGrade,
+                                options: gradeList.map { $0.name }
+                            )
                         }
+
                         
                         // Row 2: Bài học
                         VStack(alignment: .leading, spacing: 8) {

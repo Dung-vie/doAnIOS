@@ -57,8 +57,8 @@ struct LoginView: View {
                                 .textInputAutocapitalization(.never)
                         }
                         .padding()
-                        .background(Color(.systemGray6))
-                        .cornerRadius(14)
+                        .background(Color(.green))
+                        .cornerRadius(0)
                     }
                     
                     // Password
@@ -80,8 +80,8 @@ struct LoginView: View {
                             }
                         }
                         .padding()
-                        .background(Color(.systemGray6))
-                        .cornerRadius(14)
+                        .background(Color(.green))
+                        .cornerRadius(0)
                     }
                 }
                 
